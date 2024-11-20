@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 문자 인코딩을 UTF-8로 설정 -->
+    <meta charset="UTF-8">
+    
+    <!-- 페이지 제목 설정 -->
+    <title>J-Query</title>
+    
+    <!-- 페이지의 아이콘 설정 -->
+    <link rel="icon" href="../img/chrome.png">
+    
+    <!-- jQuery 라이브러리(슬림 버전) 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    
+    <style>
+        /* .ancestors 클래스 내의 모든 요소 스타일 설정 */
+        .ancestors * {
+            display: block; /* 모든 요소를 블록 요소로 표시 */
+            border: 2px solid gray; /* 회색 테두리 설정 */
+            padding: 5px; /* 여백 설정 */
+            margin: 15px; /* 마진 설정 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 조상 요소들을 포함하는 div -->
+    <div class="ancestors">
+        <div>
+            div(great-grandparent)
+            <ul>
+                ul(grandparent)
+                <li>
+                    li(parent)
+                    <span>span</span> <!-- 자식 요소 -->
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            DIV(grandparent)
+            <p>
+                p(parent)
+                <span>span</span> <!-- 자식 요소 -->
+            </p>
+        </div>
+    </div>
+</body>
+<script>
+    // span의 바로 위 부모를 가져오는 코드 (주석 처리됨)
+    //$('span').parent().css({'border':'2px solid red'});
+
+    // parents() 메서드는 지정하지 않으면 최상위 html 요소까지 올라가며,
+    // 인자를 주면 해당 요소까지 올라가면서 부모를 선택
+    //$('span').parents('div').css({'border':'2px solid red'});
+
+    // parentsUntil() 메서드는 지정하지 않으면 최상위 html 요소까지 올라가며,
+    // 지정한 요소까지의 부모를 선택하여 스타일을 변경
+    $('span').parentsUntil('.ancestors').css({'border':'2px solid red'});
+</script>    
+</html>

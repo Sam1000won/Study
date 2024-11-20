@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>DOM SCRIPT</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* 인간 캐릭터를 나타내는 스타일 */
+            #human {
+                width: 205px; /* 요소의 너비 */
+                height: 260px; /* 요소의 높이 */
+                list-style-type: none; /* 리스트 스타일 없애기 */
+                float: left; /* 요소를 왼쪽으로 정렬 */
+                background: url(../img/sprite.png) -32px -11px; /* 배경 이미지 설정 */
+                position: absolute; /* 절대 위치 설정 */
+                left: 10px; /* 왼쪽에서 10px 위치 */
+            }
+        </style>
+    </head>
+    <body>        
+        <button onclick="start()" id="st">출발</button> <!-- 출발 버튼 -->
+        <button onclick="stop()" id="stp">정지</button> <!-- 정지 버튼 -->
+        <ul>
+            <li id="human"></li> <!-- 애니메이션 요소 -->
+        </ul>
+    </body>
+    
+    <script>                
+        var elem = document.getElementById('human').style; // #human 요소의 스타일 참조
+        var btn = document.getElementById('st'); // 출발 버튼 참조
+        var btn2 = document.getElementById('stp'); // 정지 버튼 참조
+        var time; // setInterval의 반환값을 저장할 변수
+        
+        // 애니메이션 이미지의 좌표 배열 및 초기 이동 좌표값
+        var arr = [-32, -298, -543, -788, -1055, -1305];        
+        var move = 10; // 초기 이동 좌표
+        var i = 0; // 애니메이션 인덱스 초기화
+        
+        // 출발 버튼 클릭 시 호출되는 함수
+        function start() {
+            time = setInterval(function() { // 0.1초마다 반복                        
+                btn.disabled = true; // 출발 버튼 비활성화
+                btn2.disabled = false; // 정지 버튼 활성화
+                    
+                // 1. 애니메이션 동작
+                elem.background = 'url(../img/sprite.png) ' + arr[i] + 'px ' + '-11px'; // 배경 이미지 변경
+                if (i == 5) { // 마지막 애니메이션 프레임일 경우
+                    i = 0;  // 첫 번째 프레임으로 리셋
+                } else {      
+                    i++;    // 다음 프레임으로 인덱스 증가
+                }                                    
+                
+                // 2. 왼쪽으로 움직이기
+                if (move <= 1150) { // 최대 왼쪽 위치 제한
+                    move += 10; // 이동 거리 증가
+                    elem.left = move + 'px'; // 새로운 위치 설정
+                } else { // 최대 위치를 초과할 경우
+                    move = 10; // 초기 위치로 리셋
+                }                
+                
+            }, 100); // 100ms 마다 실행
+        }
+        
+        // 정지 버튼 클릭 시 호출되는 함수
+        function stop() {            
+            btn.disabled = false; // 출발 버튼 활성화
+            btn2.disabled = true; // 정지 버튼 비활성화
+            clearInterval(time); // 애니메이션 중지
+        }                
+    </script>
+</html>

@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>Java Script Tutorial</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+    </head>
+    <body>
+        <!-- 배열 조작을 위한 버튼들 -->
+        <button onclick="arrPush()">push</button> <!-- 배열의 끝에 값을 추가하는 버튼 -->
+        <button onclick="arrPop()">pop</button> <!-- 배열의 끝에서 값을 제거하는 버튼 -->
+        <button onclick="arrUnshift()">arrUnshift</button> <!-- 배열의 시작에 값을 추가하는 버튼 -->
+        <button onclick="arrShift()">arrShift</button> <!-- 배열의 시작에서 값을 제거하는 버튼 -->
+        <hr/>
+        <button onclick="arrSlice()">slice</button> <!-- 배열의 일부분을 잘라내는 버튼 -->
+        <button onclick="spliceDel()">splice(Del)</button> <!-- 배열의 특정 요소를 삭제하는 버튼 -->
+        <button onclick="spliceAdd()">splice(Add)</button> <!-- 배열의 특정 위치에 요소를 추가하는 버튼 -->
+        <hr/>
+        <button onclick="concatEx()">concat</button> <!-- 두 배열을 합치는 버튼 -->
+        <button onclick="delEx()">delete</button> <!-- 특정 인덱스의 값을 삭제하는 버튼 -->
+        <button onclick="joinEx()">join</button> <!-- 배열의 값을 문자열로 변환하는 버튼 -->
+
+        <script>
+            var arr = []; // 빈 배열 생성
+            var i = 1; // 카운터 변수 초기화
+
+            // push(): 배열의 끝에 값을 추가하는 함수
+            function arrPush(){
+                arr.push(i); // i 값을 배열에 추가
+                i++; // i 값 증가
+                console.log(arr); // 현재 배열 출력
+            }
+
+            // pop(): 배열의 끝에서 값을 제거하는 함수
+            function arrPop(){
+                var num = arr.pop(); // 배열의 마지막 값 제거 및 저장
+                console.log('빠진 값 : ', num, arr); // 제거된 값과 현재 배열 출력
+            }
+
+            // unshift(): 배열의 시작에 값을 추가하는 함수
+            function arrUnshift(){
+                arr.unshift(i); // i 값을 배열의 시작에 추가
+                i++; // i 값 증가
+                console.log(arr); // 현재 배열 출력
+            }
+
+            // shift(): 배열의 시작에서 값을 제거하는 함수
+            function arrShift(){
+                var num = arr.shift(); // 배열의 첫 번째 값 제거 및 저장
+                console.log('빠진 값 : ' + num, arr); // 제거된 값과 현재 배열 출력
+            }
+
+            // slice(a, b): 배열의 일부를 잘라내는 함수
+            function arrSlice(){
+                var numArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; // 초기 배열
+                console.log(numArr); // 초기 배열 출력
+                var newArr = numArr.slice(1, 3); // 1번 인덱스부터 3번 인덱스 전까지 잘라낸 배열 생성
+                console.log('slice result : ', newArr); // 잘라낸 배열 출력
+            }
+
+            var array = ['가', '나', '다', '라', '마', '바', '사']; // 문자열 배열 생성
+
+            // spliceDel(a, b): 특정 인덱스부터 b개의 값을 삭제하는 함수
+            function spliceDel(){
+                console.log('실행전', array); // 삭제 전 배열 출력
+                array.splice(2, 2); // 인덱스 2부터 2개 요소 삭제
+                console.log('실행후', array); // 삭제 후 배열 출력
+            }
+
+            // splice(a, b, c, ...): 특정 인덱스부터 b개의 요소를 삭제하고, c부터 추가하는 함수
+            function spliceAdd(){
+                console.log('실행전', array); // 수정 전 배열 출력
+                array.splice(2, 2, 'H', 'I'); // 인덱스 2부터 2개 요소를 'H'와 'I'로 대체
+                console.log('실행후', array); // 수정 후 배열 출력
+            }
+
+            // concat(array1, array2, ...): 두 배열을 결합하는 함수
+            function concatEx(){
+                var arr1 = [1, 2, 3, 4, 5]; // 첫 번째 배열
+                var arr2 = ['a', 'b', 'c', 'd']; // 두 번째 배열
+                var newArr = arr1.concat(arr2); // 두 배열을 결합
+                console.log(newArr); // 결합된 배열 출력
+                console.log(arr1); // 원본 배열 출력
+                console.log(arr2); // 원본 배열 출력
+            }
+
+            // delete(): 특정 인덱스의 값을 삭제하는 함수
+            function delEx(){
+                console.log(array); // 삭제 전 배열 출력
+                delete array[2]; // 인덱스 2의 값을 삭제 (undefined로 변환)
+                console.log(array); // 삭제 후 배열 출력
+            }
+
+            // join(): 배열의 값을 문자열로 변환하는 함수
+            function joinEx(){
+                console.log('valueOf : ' + array.valueOf()); // 배열의 기본 값 출력
+                console.log('join : ' + array.join('_')); // 배열의 값을 '_'로 연결하여 출력
+            }
+        </script>
+    </body>
+</html>

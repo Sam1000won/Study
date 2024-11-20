@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>DOM SCRIPT</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* 이벤트 영역의 스타일 설정 */
+            #eventZone {
+                width: 250px; /* 너비 250px */
+                height: 250px; /* 높이 250px */
+                background-color: yellowgreen; /* 배경색 설정 */
+                text-align: center; /* 텍스트 중앙 정렬 */
+            }
+        </style>
+    </head>
+    <body>
+        <h4 id="msg">FOCUS NULL</h4> <!-- 포커스 상태를 표시할 H4 요소 -->
+        <p><input type="text" id="txtinput"></p> <!-- 텍스트 입력 필드 -->
+        <div id="eventZone"></div> <!-- 이벤트 영역을 위한 DIV 요소 -->
+        <h4>mouse position : <span id="pos"></span></h4> <!-- 마우스 위치 표시할 스팬 요소 -->
+    </body>
+        
+    <script>        
+        // 요소를 변수에 담기
+        var msgH4 = document.getElementById('msg'); // H4 요소
+        var txtInp = document.getElementById('txtinput'); // 텍스트 입력 필드
+        var evtDiv = document.getElementById('eventZone'); // 이벤트 영역 DIV
+        var posSpan = document.getElementById('pos'); // 마우스 위치 스팬
+
+        // 텍스트 입력 필드에 focusin, focusout 이벤트 추가
+        txtInp.addEventListener('focusin', fcsin); // 포커스가 들어올 때 호출
+        txtInp.addEventListener('focusout', fcsout); // 포커스가 나갈 때 호출            
+
+        // focusin 이벤트 처리 함수
+        function fcsin(evt) {
+            console.log('해당 요소에 포커스 됨.'); // 포커스 시 메시지 출력
+            console.log(evt); // 이벤트 객체 출력
+            msgH4.innerHTML = 'FOCUS EVENT'; // H4에 포커스 이벤트 상태 표시                         
+        }   
+
+        // focusout 이벤트 처리 함수
+        function fcsout(evt) {
+            console.log('포커스가 해제됨.'); // 포커스 해제 시 메시지 출력
+            console.log(evt); // 이벤트 객체 출력
+            console.log(this); // 현재 컨텍스트 출력 (여기서는 txtInp)
+            msgH4.innerHTML = 'FOCUS NULL'; // H4에 포커스 해제 상태 표시                         
+        }
+
+        // 키 입력 시 이벤트 처리
+        txtInp.addEventListener('keyup', function(evt) {
+            console.log(evt.keyCode); // 눌린 키의 코드 출력
+            // 엔터키(코드 13)를 눌렀을 때 경고창 표시
+            if (evt.keyCode == '13') {
+                alert('전송 하였습니다.'); // 엔터키 입력 시 알림
+            }            
+        });
+
+        // 이벤트 영역에 다양한 이벤트 추가
+        evtDiv.addEventListener('click', function(evt) {
+            console.log('click', evt); // 클릭 이벤트 출력
+            this.innerHTML = '<h3>' + evt.type + '</h3>'; // 클릭한 이벤트 타입 표시
+            this.style.backgroundColor = 'red'; // 배경색 변경
+        });
+
+        evtDiv.addEventListener('dblclick', function(evt) {
+            console.log('dblclick', evt); // 더블 클릭 이벤트 출력
+            this.innerHTML = '<h3>' + evt.type + '</h3>'; // 더블 클릭한 이벤트 타입 표시
+            this.style.backgroundColor = 'purple'; // 배경색 변경
+        });
+
+        evtDiv.addEventListener('mouseenter', function(evt) {
+            console.log('mouseenter', evt); // 마우스 엔터 이벤트 출력
+            this.innerHTML = '<h3>' + evt.type + '</h3>'; // 마우스 엔터 이벤트 타입 표시
+            this.style.backgroundColor = 'blue'; // 배경색 변경
+        });
+
+        evtDiv.addEventListener('mouseout', function(evt) {
+            console.log('mouseout', evt); // 마우스 아웃 이벤트 출력
+            this.innerHTML = '<h3>' + evt.type + '</h3>'; // 마우스 아웃 이벤트 타입 표시
+            this.style.backgroundColor = 'yellowgreen'; // 원래 색으로 변경
+        });
+
+        // body에 mousemove 이벤트 추가
+        var elem = document.getElementsByTagName('body')[0];
+        elem.addEventListener('mousemove', function(e) {
+            console.log(e); // 마우스 이동 이벤트 출력
+            posSpan.innerHTML = e.clientX + ' / ' + e.clientY; // 마우스 위치 표시
+        });
+    </script>
+</html>

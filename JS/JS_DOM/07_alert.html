@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>DOM SCRIPT</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* 스타일을 추가할 수 있는 공간 (현재 비어 있음) */
+        </style>
+    </head>
+    <body>
+        <button onclick="popup()">alert</button> <!-- alert 대화상자 호출 버튼 -->
+        <button onclick="conf()">confirm</button> <!-- confirm 대화상자 호출 버튼 -->
+        <button onclick="promp()">prompt</button> <!-- prompt 대화상자 호출 버튼 -->
+    </body>
+        
+    <script>        
+        // 경고창을 띄우는 함수
+        function popup(){
+            // 경고창은 브라우저의 모든 움직임을 정지시킨다.
+            alert('경고창 입니다.'); // 경고 메시지 표시
+        }
+
+        // 확인 대화상자를 띄우는 함수
+        function conf(){
+            var result = confirm('정말로 삭제 하시겠습니까?'); // 사용자에게 확인 요청
+            console.log(result); // 결과(true/false)를 콘솔에 출력
+            
+            // 사용자가 '확인'을 클릭한 경우
+            if(result == true){
+                alert('삭제되었습니다.'); // 삭제 완료 메시지 표시
+            }
+        }
+
+        // 입력 대화상자를 띄우는 함수
+        function promp(){
+            var result = prompt('당신의 이름을 입력하세요.'); // 사용자에게 이름 입력 요청
+            console.log(result); // 입력된 값을 콘솔에 출력
+            
+            // 사용자가 이름을 입력한 경우
+            if(result != ''){
+                alert('반갑습니다, ' + result + '님!'); // 환영 메시지 표시
+            } else {
+                alert('이름을 입력해주세요!'); // 이름 입력 요청 메시지 표시
+            }
+        }
+    </script>
+</html>

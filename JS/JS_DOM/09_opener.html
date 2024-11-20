@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>DOM SCRIPT</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* 스타일을 추가할 수 있는 공간 (현재 비어 있음) */
+        </style>
+    </head>
+    <body>
+        <button>창열기</button> <!-- 자식 창을 열기 위한 버튼 -->
+        <button>창닫기</button> <!-- 자식 창을 닫기 위한 버튼 -->
+        <br/>
+        자식 창에서 받아온 값 : <input type="text" id="fromChild"/><br/> <!-- 자식 창에서 받은 값을 표시할 입력 필드 -->
+        자식 창으로 보낼 값 : <input type="text" id="toChild"/><br/> <!-- 자식 창으로 보낼 값을 입력할 필드 -->
+        <input type="button" value="보내기" onclick="sendVal()"/> <!-- 값을 자식 창으로 전송하는 버튼 -->
+    </body>
+    
+    <script>
+        var btn = document.getElementsByTagName('button'); // 모든 버튼 요소를 선택
+        var win; // 자식 창을 참조할 변수 선언
+        
+        // 첫 번째 버튼을 클릭했을 때 자식 창을 여는 이벤트 리스너
+        btn[0].addEventListener('click', function() {
+            console.log('open!'); // 창 열기 로그
+            win = window.open('09_child.html', '', 'width=415,height=100'); // 자식 창 열기
+        });
+
+        // 두 번째 버튼을 클릭했을 때 자식 창을 닫는 이벤트 리스너
+        btn[1].addEventListener('click', function() {
+            console.log('close!'); // 창 닫기 로그
+            win.close(); // 열린 자식 창 닫기
+        });
+
+        // 자식 창으로 값을 전송하는 함수
+        function sendVal() {
+            // 자식 창에 보낼 값을 가져옴
+            var val = document.getElementById('toChild').value; 
+            // 자식 창의 'fromParent' 입력 필드에 값을 설정
+            win.document.getElementById('fromParent').value = val; 
+        }
+
+        // 부모 창에서 사용할 수 있는 함수
+        function plus(a, b) {
+            console.log('부모창의 함수 plus() 의 결과값 : ', a + b); // 두 수의 합을 로그에 출력
+        }
+    </script>
+</html>

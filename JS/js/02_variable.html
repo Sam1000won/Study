@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Java script Tutorial</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <script>
+            // myFunction 함수 정의
+            function myFunction(){
+                // id가 'demo'인 요소의 innerHTML을 "paragraph changed."로 변경
+                document.getElementById('demo').innerHTML = "paragraph changed.";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>My Web Page</h1> <!-- 웹 페이지의 주요 제목 -->
+        <p id="demo">A paragraph</p> <!-- id가 'demo'인 문단 -->
+        
+        <script>
+            // 변수 선언 및 초기화
+            var a = 123; // 변수 a를 123으로 정의
+            var b = 3.14; // 변수 b를 3.14로 정의
+            var c = '문자열'; // 변수 c를 '문자열'로 정의
+            var d = false; // 변수 d를 false로 정의
+
+            // 문자열과 변수를 연결하여 출력
+            console.log('a : ' + a); // 'a : 123' 출력
+            console.log('b : ' + b); // 'b : 3.14' 출력
+            console.log('c : ' + c); // 'c : 문자열' 출력
+            console.log('d : ' + d); // 'd : false' 출력
+            
+            // 변수의 값을 콤마로 구분하여 출력
+            console.log('a : ', a); // 'a : 123' 출력
+            console.log('b : ', b); // 'b : 3.14' 출력
+            console.log('c : ', c); // 'c : 문자열' 출력
+            console.log('d : ', d); // 'd : false' 출력
+            
+            // 함수 설명: return 유무에 따라 반환값이 있는지 없는지 정해진다.
+            // (여기서는 사용된 함수가 없으므로 설명만 포함)
+        </script>
+        
+        <button type="button" onclick="myFunction()">Try it</button> <!-- 버튼 클릭 시 myFunction 호출 -->
+    </body>
+</html>

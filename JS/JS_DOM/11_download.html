@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>DOM SCRIPT</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* Progress 바의 스타일 설정 */
+            progress {
+                width: 500px; /* Progress 바의 너비 */
+                height: 25px; /* Progress 바의 높이 */
+            }
+            /* 다운로드 진행을 나타내는 작은 박스의 스타일 */
+            #proc {
+                position: absolute; /* 절대 위치로 설정 */
+                background-color: red; /* 배경색을 빨간색으로 설정 */
+                width: 10px; /* 박스의 너비 */
+                height: 10px; /* 박스의 높이 */
+                top: 100px; /* 상단에서 100px 위치 */
+                left: 10px; /* 좌측에서 10px 위치 */
+            }
+            /* 카운트 텍스트 색상 설정 */
+            #cnt {
+                color: red; /* 텍스트 색상을 빨간색으로 설정 */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 다운로드 진행 메시지 -->
+        <h1><span id="cnt">5</span> 초 후 다운로드가 진행 됩니다.</h1>       
+        <!-- Progress 바 -->
+        <progress id="download" max="100" min="0" value="0"></progress>
+        <button onclick="count()">다운로드</button> <!-- 다운로드 시작 버튼 -->
+        <!-- 다운로드 진행을 나타내는 박스 -->
+        <div id="proc"></div>        
+    </body>
+    <script>
+        var time; // 타이머를 저장할 변수
+
+        // 다운로드 카운트 다운 함수
+        function count(){
+            var msg = document.getElementsByTagName('h1')[0]; // H1 요소 선택
+            msg.innerHTML = '<span id="cnt">5</span> 초 후 다운로드가 진행 됩니다.'; // 초기 메시지 설정
+            var i = 5; // 카운트 다운을 위한 변수 초기화
+            
+            // 1초마다 i의 값을 1 감소시키는 setInterval 설정
+            time = setInterval(function(){
+                i--;
+                document.getElementById('cnt').innerHTML = i; // 카운트 값 갱신
+            }, 1000);
+            
+            // 5초 후에 interval을 멈추고 다운로드 시작
+            setTimeout(function(){
+                clearInterval(time); // 카운트 다운 중지
+                download(); // 다운로드 진행 함수 호출
+            }, 5000);
+        }
+
+        // 다운로드 진행 함수
+        function download(){
+            var bar = document.getElementById('download'); // Progress 바 선택
+            var box = document.getElementById('proc'); // 다운로드 진행 박스 선택
+            var msg = document.getElementsByTagName('h1')[0]; // H1 요소 선택
+            msg.innerHTML = '다운로드 진행 중(0%)'; // 다운로드 진행 메시지 초기화
+            var per = 0; // 진행률 변수 초기화
+            
+            // 0.01초마다 진행률을 갱신하는 setInterval 설정
+            time = setInterval(function(){ 
+                per++; // 진행률 증가
+                msg.innerHTML = '다운로드 진행 중('+per+'%)'; // 진행률 메시지 갱신
+                bar.value = per; // Progress 바의 값 갱신
+                box.style.left = per * 5 + 'px'; // 박스를 진행률에 따라 이동
+                
+                // 진행률이 100%에 도달하면
+                if(per == 100){  
+                    clearInterval(time); // 반복 종료
+                    msg.innerHTML = '다운로드 완료!'; // 최종 메시지 표시
+                }
+            }, 10); // 10ms마다 실행
+        }
+    </script>
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>DOM SCRIPT</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* 스타일을 추가할 수 있는 공간 (현재 비어 있음) */
+        </style>
+    </head>
+    <body>
+        <h1 id="cnt">0</h1> <!-- 카운트를 표시할 H1 요소 -->
+        <button onclick="setTime()">3초후 경고</button> <!-- 3초 후 경고창을 띄우는 버튼 -->
+        <button onclick="interval(this)">카운트</button> <!-- 카운트를 시작하는 버튼 -->
+        <button onclick="stop()">정지</button> <!-- 카운트를 정지하는 버튼 -->
+    </body>
+        
+    <script>
+        var i = 0;   // 카운트를 위한 변수 초기화
+        var time;    // setInterval을 저장할 변수
+
+        // 카운트 시작 함수
+        function interval(evt){
+            // 카운트 버튼을 비활성화하여 더 이상 클릭하지 못하게 막음
+            evt.disabled = true;      
+            var elem = document.getElementById('cnt'); // 카운트를 표시할 요소
+            
+            // setInterval: 일정 시간마다 실행할 함수를 설정
+            time = setInterval(function(){
+                i++; // 카운트 증가
+                elem.innerHTML = i; // 증가한 값을 화면에 표시
+            }, 1000); // 1000ms (1초)마다 실행
+        }
+
+        // 카운트를 정지하는 함수
+        function stop(){
+            clearInterval(time); // 설정된 interval 중지
+            document.getElementsByTagName('button')[1].disabled = false; // 카운트 버튼 활성화
+        }
+
+        // 3초 후 경고창을 띄우는 함수
+        function setTime(){
+            // setTimeout: 일정 시간 후에 실행할 함수를 설정
+            setTimeout(function(){
+                alert('3초가 경과했습니다.'); // 3초 후 경고창 표시
+            }, 3000); // 3000ms (3초) 후 실행
+        }
+    </script>
+</html>

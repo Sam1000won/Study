@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>DOM SCRIPT</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* 스타일을 추가할 수 있는 공간 (현재 비어 있음) */
+        </style>
+    </head>
+    <body>
+        <ol>
+            <li>location은 위치정보를 얻을 때 사용한다.</li> <!-- location 객체 설명 -->
+            <li>window.location.href</li> <!-- 현재 페이지의 전체 URL -->
+            <li>window.location.protocol</li> <!-- 웹 프로토콜 (http, https 등) -->
+            <li>window.location.hostname</li> <!-- 도메인 또는 IP 주소 -->
+            <li>window.location.pathname</li> <!-- 도메인을 제외한 경로 -->
+            <li>window.location.port</li> <!-- 포트 번호 -->
+            <li>window는 생략이 가능하다.</li> <!-- window 객체 생략 가능성 설명 -->            
+        </ol>
+        <button onclick="move()">page move</button> <!-- 버튼 클릭 시 move() 함수 호출 -->
+    </body>
+
+    <script>        
+        // 현재 페이지의 위치 정보 출력
+        console.log(location.href);     // 현재 페이지가 존재하는 서버상의 전체 경로
+        console.log(location.protocol); // 웹 프로토콜 (http, https, ws 등)
+        console.log(location.hostname); // 도메인 또는 IP 주소
+        console.log(location.pathname); // 도메인을 제외한 나머지 주소
+        console.log(location.port);     // 포트 번호        
+
+        // 페이지 이동 함수
+        function move(){
+            // location.href는 a 태그의 href 속성처럼 페이지 이동을 시켜준다.
+            location.href = 'https://www.naver.com/'; // Naver 페이지로 이동
+        }        
+    </script>
+</html>

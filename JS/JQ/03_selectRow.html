@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 문자 인코딩을 UTF-8로 설정 -->
+    <meta charset="UTF-8">
+    
+    <!-- 페이지 제목 설정 -->
+    <title>J-Query</title>
+    
+    <!-- 페이지의 아이콘 설정 -->
+    <link rel="icon" href="../img/chrome.png">
+    
+    <!-- jQuery 라이브러리(슬림 버전) 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    
+    <style>
+        /* 테이블 스타일 설정 */
+        table, th, td {
+            border: 1px solid black; /* 테이블, 헤더, 셀의 테두리 설정 */
+            border-collapse: collapse; /* 테두리 겹침 방지 */
+            text-align: center; /* 텍스트를 중앙 정렬 */
+            padding: 5px 10px; /* 셀 안의 여백 설정 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 테이블 구조 -->
+    <table>
+        <thead>
+            <tr>
+                <th>NO</th><th>NAME</th><th>BIRTH DAY</th> <!-- 테이블 헤더 -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 테이블 본문 -->
+            <tr>
+                <td>1</td><td>김길동</td><td>2018-01-01</td> <!-- 첫 번째 데이터 행 -->
+            </tr>
+            <tr>
+                <td>2</td><td>이길동</td><td>2018-01-01</td> <!-- 두 번째 데이터 행 -->
+            </tr>
+            <tr>
+                <td>3</td><td>박길동</td><td>2018-01-01</td> <!-- 세 번째 데이터 행 -->
+            </tr>
+            <tr>
+                <td>4</td><td>정길동</td><td>2018-01-01</td> <!-- 네 번째 데이터 행 -->
+            </tr>
+            <tr>
+                <td>5</td><td>홍길동</td><td>2018-01-01</td> <!-- 다섯 번째 데이터 행 -->
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+<script>
+    /* jQuery 코드 */
+    
+    // 홀수 인덱스의 tr 요소를 선택하여 콘솔에 출력
+    console.log($('tr:odd')); // 홀수 행 (1, 3, 5)
+    
+    // 짝수 인덱스의 tr 요소를 선택하여 콘솔에 출력
+    console.log($('tr:even')); // 짝수 행 (0, 2, 4)
+</script>    
+</html>

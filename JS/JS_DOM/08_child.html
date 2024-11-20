@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>DOM SCRIPT</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* 스타일을 추가할 수 있는 공간 (현재 비어 있음) */
+        </style>
+    </head>
+    <body>
+        부모 창에서 받아온 값 : <input type="text" id="fromParent"/><br/> <!-- 부모 창에서 받은 값을 표시할 입력 필드 -->
+        부모 창으로 보낼 값 : <input type="text" id="toParent"/><br/> <!-- 부모 창으로 보낼 값을 입력할 필드 -->
+        <input type="button" value="보내기" onclick="sendVal()"/> <!-- 버튼 클릭 시 sendVal() 함수 호출 -->
+    </body>
+    <script>
+        // 부모 창으로 값을 전송하는 함수
+        function sendVal(){
+            // 부모 창에 접근하기 위해 opener 객체를 사용
+            // 'toParent' 입력 필드의 값을 가져옴
+            var val = window.document.getElementById('toParent').value; 
+            // 부모 창의 'fromChild' 입력 필드에 값을 설정
+            opener.document.getElementById('fromChild').value = val;            
+            // 부모 창에 있는 plus 함수를 호출, 인자로 4와 6 전달
+            opener.plus(4, 6);
+        }
+    </script>
+</html>

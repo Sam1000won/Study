@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>DOM SCRIPT</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* 스타일을 추가할 수 있는 공간 (현재 비어 있음) */
+        </style>
+    </head>
+    <body>
+        <h1>H1 tag 1</h1> <!-- 첫 번째 H1 태그 -->
+        <h1>H1 tag 2</h1> <!-- 두 번째 H1 태그 -->
+        <h1>H1 tag 3</h1> <!-- 세 번째 H1 태그 -->
+        <h1>H1 tag 4</h1> <!-- 네 번째 H1 태그 -->
+        <h2 class="head2">head2 class</h2> <!-- 첫 번째 H2 태그 (class: head2) -->
+        <h2 class="head2">head2 class</h2> <!-- 두 번째 H2 태그 (class: head2) -->
+        <h2 class="head2">head2 class</h2> <!-- 세 번째 H2 태그 (class: head2) -->
+        <h2 class="head2">head2 class</h2> <!-- 네 번째 H2 태그 (class: head2) -->
+        <h3 id="head3">head3 id</h3> <!-- H3 태그 (id: head3) -->
+    </body>
+        
+    <script>
+        // 모든 H1 태그를 선택
+        var elemTag = document.getElementsByTagName('h1');
+        console.log(elemTag); // 선택된 H1 태그 목록 출력 (HTMLCollection)
+
+        // 'head2' 클래스를 가진 모든 요소를 선택
+        var elemClass = document.getElementsByClassName('head2');
+        console.log(elemClass); // 선택된 H2 태그 목록 출력 (HTMLCollection)
+        
+        // ID가 'head3'인 요소를 선택
+        var elemId = document.getElementById('head3');
+        console.log(elemId); // 선택된 H3 태그 출력 (HTMLElement)
+
+        // CSS 선택자 방식 활용
+        // .head2 클래스를 가진 요소 중 첫 번째만 선택
+        elemClass = document.querySelector('.head2');
+        console.log(elemClass); // 첫 번째 'head2' 클래스를 가진 요소 출력 (HTMLElement)
+
+        // .head2 클래스를 가진 모든 요소를 선택
+        elemClass = document.querySelectorAll('.head2');
+        console.log(elemClass); // 선택된 모든 'head2' 클래스 요소 목록 출력 (NodeList)
+
+    </script>
+</html>

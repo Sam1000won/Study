@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>DOM SCRIPT</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* 스타일을 추가할 수 있는 공간 (현재 비어 있음) */
+        </style>
+    </head>
+
+    <body>
+        <h1 id="p1"></h1> <!-- ID가 p1인 H1 태그 -->
+        <button onclick="test()">click</button> <!-- 버튼 클릭 시 test() 함수 호출 -->
+        <br/>
+        <img src="../img/img01.jpg" id="image" onclick="changeImg()"/> <!-- 클릭 시 changeImg() 함수 호출 -->
+        <br/>
+        <input type="text" value="아무 내용이나..."/> <!-- 기본 텍스트 입력 필드 -->
+        <a href="#" my-attr="header">링크 클릭</a> <!-- my-attr 속성이 있는 링크 -->
+        <a href="#" my-attr="main">링크 클릭</a> <!-- my-attr 속성이 있는 링크 -->
+        <a href="#" my-attr="footer">링크 클릭</a> <!-- my-attr 속성이 있는 링크 -->
+    </body>
+    
+    <script>
+        // 모든 <a> 태그를 선택
+        var aTags = document.getElementsByTagName('a');
+        console.log(aTags); // 선택된 <a> 태그 목록 출력
+
+        for (var a of aTags) {
+            // my-attr이라는 속성의 값을 가져옴
+            var val = a.getAttribute('my-attr');
+            console.log(val); // 속성 값 출력
+
+            // a.innerHTML = '<h1>'+val.toUpperCase()+'</h1>'; // 주석 처리된 코드
+            a.innerHTML = '<h1>'+val.toUpperCase()+'</h1>'; // 속성 값을 대문자로 변경하여 링크 텍스트로 설정
+            a.style.textDecoration = 'none'; // 링크의 밑줄 제거
+            a.style.color = 'black'; // 링크 색상을 검정으로 설정
+        }
+
+        // 텍스트 입력 필드를 버튼으로 변경
+        var elem = document.getElementsByTagName('input');
+        console.log(elem); // 선택된 input 요소 출력
+        elem[0].type = 'button'; // 첫 번째 input의 타입을 버튼으로 변경
+        elem[0].value = 'click'; // 버튼의 텍스트를 'click'으로 설정
+
+        var i = 0; // 이미지 배열 인덱스 초기화
+        function changeImg(){
+            var img = document.getElementById('image');            
+            console.log(img); // 선택된 이미지 요소 출력
+            var imgArr = ['img01.jpg', 'img02.jpg', 'img03.jpg', 'img04.jpg']; // 이미지 배열
+            
+            // 이미지 속성을 변경
+            img.setAttribute('src', '../img/' + imgArr[i]); // 이미지 소스 변경
+            i++; // 인덱스 증가
+            if (i == imgArr.length) {
+                i = 0; // 인덱스가 배열의 길이와 같아지면 0으로 리셋
+            }
+        }
+
+        function test(){
+            // H1 태그를 선택
+            var elem = document.getElementById('p1');
+            console.log(elem); // 선택된 H1 요소 출력
+            elem.innerHTML = '새로운 텍스트 등장'; // H1의 텍스트 변경
+            elem.style.backgroundColor = 'yellow'; // H1의 배경색을 노란색으로 설정
+        }
+
+    </script>
+</html>

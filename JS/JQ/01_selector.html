@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 문자 인코딩을 UTF-8로 설정 -->
+    <meta charset="UTF-8">
+    
+    <!-- 페이지 제목 설정 -->
+    <title>J-Query</title>
+    
+    <!-- 페이지의 아이콘 설정 -->
+    <link rel="icon" href="../img/chrome.png">
+    
+    <!-- jQuery 라이브러리(슬림 버전) 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+    <!-- 클래스가 없는 헤딩 -->
+    <h1>클래스가 없다.</h1>
+    <!-- 클래스가 있는 헤딩 -->
+    <h1 class="cls">클래스가 있다.</h1>
+    <h1>클래스가 없다.</h1>
+    <h1 class="cls">클래스가 있다.</h1>
+
+    <!-- ID가 있는 단락 -->
+    <p id="one">아이디가 있는 녀석</p>
+    <!-- 태그만 있는 단락 -->
+    <p>태그만 있는 녀석</p>
+
+    <!-- 리스트 1 -->
+    <h3>List 1:</h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>J-QUERY</li>
+    </ul>
+
+    <!-- 리스트 2 -->
+    <h3>List 2:</h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>J-QUERY</li>
+    </ul>
+
+    <!-- 링크 설정 -->
+    <a href="http://w3schools.com">사이트 링크 A</a>
+    <a href="http://w3schools.com">사이트 링크 B</a>
+    <a href="http://w3schools.com" target="_blank">사이트 링크 C</a>
+</body>
+<script>
+    /* 일반 JavaScript 코드 */
+    
+    // ID가 'one'인 요소를 선택하여 콘솔에 출력
+    console.log(document.getElementById('one'));      
+    
+    // 클래스가 'cls'인 모든 요소를 선택하여 콘솔에 출력
+    console.log(document.getElementsByClassName('cls'));        
+    
+    // 모든 p 태그를 선택하여 콘솔에 출력
+    console.log(document.getElementsByTagName('p'));
+
+    /* jQuery 코드 */
+    // jQuery 기초
+    // ID가 'one'인 요소를 선택하여 콘솔에 출력
+    console.log($('#one')); // id="one"
+    
+    // 클래스가 'cls'인 모든 요소를 선택하여 콘솔에 출력
+    console.log($('.cls')); // class="cls"
+    
+    // 모든 p 태그를 선택하여 콘솔에 출력
+    console.log($('p')); // p 태그
+
+    // 선택자 사용 예시
+    console.log($('*')); // 모든 요소 선택
+    console.log($('h1.cls')); // h1 태그 중에서 클래스가 'cls'인 요소 선택
+    console.log($('p:first')); // p 태그 중에서 첫 번째 요소 선택
+
+    // ul 태그의 자식 요소 중 li 태그 선택
+    console.log($('ul li')); // ul 태그의 자식 요소 중 li 태그
+    
+    /* 복잡한 선택자 예시 */
+    // 첫 번째 ul 자식의 첫 li 선택
+    console.log($('ul li:first')); 
+    
+    // 모든 ul 자식의 첫 li 선택
+    console.log($('ul li:first-child')); 
+
+    // p 태그를 클릭했을 때 이벤트 처리
+    $('p').click(function() { // 클릭 이벤트 처리
+        console.log($(this)); // 클릭된 p 태그를 출력
+    });
+
+    // 속성 선택자 예시
+    console.log($('a[href]')); // a 태그 중에서 href 속성이 있는 요소 선택
+    console.log($('a[target="_blank"]')); // a 태그 중에서 target 속성이 '_blank'인 요소 선택
+    console.log($('a[target!="_blank"]')); // a 태그 중에서 target 속성이 '_blank'가 아닌 요소 선택
+</script>    
+</html>

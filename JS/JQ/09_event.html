@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 문자 인코딩을 UTF-8로 설정 -->
+    <meta charset="UTF-8">
+
+    <!-- 페이지 제목 설정 -->
+    <title>J-Query</title>
+
+    <!-- 페이지의 아이콘 설정 -->
+    <link rel="icon" href="../img/chrome.png">
+
+    <!-- jQuery 라이브러리(슬림 버전) 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+
+    <style>
+        /* div 스타일 설정 */
+        div {
+            width: 200px; /* 너비 설정 */
+            height: 200px; /* 높이 설정 */
+            text-align: center; /* 텍스트 중앙 정렬 */
+            float: left; /* 왼쪽으로 떠서 배치 */
+            margin: 7px; /* 마진 설정 */
+        }
+        /* 마우스 존 스타일 */
+        #mousezone {
+            background-color: lightseagreen; /* 배경색 설정 */
+        }
+        /* 오버 존 스타일 */
+        #overzone {
+            background-color: orange; /* 배경색 설정 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 클릭 시 글자 색상이 바뀌는 문구 -->
+    <p>클릭하면 글자 색상이 바뀌어요!</p>
+    <p>클릭하면 글자 색상이 바뀌어요!</p>
+    <p>클릭하면 글자 색상이 바뀌어요!</p>
+    <p>클릭하면 글자 색상이 바뀌어요!</p>
+    
+    <!-- 마우스 이벤트를 적용할 div 요소 -->
+    <div id="mousezone">마우스존</div>
+    <div id="overzone">H 오버존</div>
+    
+    <!-- 입력 필드 -->
+    ID : <input type="text"/>
+    <br/>
+    PW : <input type="text"/>
+</body>
+<script>
+    // 입력 필드에 focus 및 blur 이벤트 핸들러 등록
+    $('input[type="text"]').on({
+        'focus': function() {
+            $(this).css({'background-color': 'pink'}); // 포커스 시 배경색 변경
+        },
+        'blur': function() {
+            $(this).css({'background-color': 'white'}); // 포커스 해제 시 배경색 원래대로
+        }
+    });
+
+    // mouseenter, mouseleave 이벤트를 한 번에 등록
+    $('#mousezone').on({
+        'mouseenter': function(e) {
+            $(this).css({'background-color': 'red'}); // 마우스가 들어올 때 배경색 변경
+        },
+        'mouseleave': function(e) {
+            $(this).css({'background-color': 'lightseagreen'}); // 마우스가 나갈 때 배경색 원래대로
+        },
+        'mousedown': function(e) {
+            $(this).css({'background-color': 'orange'}); // 마우스 버튼을 누를 때 배경색 변경
+        },
+        'mouseup': function(e) {
+            $(this).css({'background-color': 'red'}); // 마우스 버튼을 뗄 때 배경색 변경
+        }
+    });
+
+    // 특정 이벤트를 제거하는 방법
+    $('#mousezone').off('mouseup'); // mouseup 이벤트 제거
+
+    // hover() 메서드를 사용하여 mouseenter와 mouseleave를 동시에 처리
+    $('#overzone').hover(function() {
+        $(this).css({'background-color': 'yellow'}); // 마우스가 들어올 때
+    }, function() {
+        $(this).css({'background-color': 'orange'}); // 마우스가 나갈 때
+    });
+
+    // p 요소 클릭 시 색상 변경 및 이벤트 객체 출력
+    $('p').on('click', function(e) {
+        console.log(e); // 이벤트 객체 출력
+        $(this).css({'color': 'red'}); // 클릭 시 글자 색상 변경
+    });
+
+    // p 요소 더블 클릭 시 색상 변경
+    $('p').on('dblclick', function(e) {
+        $(this).css({'color': 'blue'}); // 더블 클릭 시 글자 색상 변경
+    });
+</script>    
+</html>

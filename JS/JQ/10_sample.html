@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 문자 인코딩을 UTF-8로 설정 -->
+    <meta charset="UTF-8">
+
+    <!-- 페이지 제목 설정 -->
+    <title>J-Query</title>
+
+    <!-- 페이지의 아이콘 설정 -->
+    <link rel="icon" href="../img/chrome.png">
+
+    <!-- jQuery 라이브러리(슬림 버전) 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+
+    <style>
+        /* 로그인 박스 스타일 설정 */
+        #ex1 {
+            background-color: orange; /* 배경색 설정 */
+            height: 150px; /* 높이 설정 */
+            width: 300px; /* 너비 설정 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 로그인 입력 필드 및 버튼 -->
+    <div id="ex1">
+        ID: <input type="text" name="userId"/> <!-- 사용자 ID 입력 필드 -->
+        <br/>
+        PW: <input type="password" name="userPw"/> <!-- 비밀번호 입력 필드 -->
+        <br/>
+        <button>로그인</button> <!-- 로그인 버튼 -->
+        <p>
+            <span></span> <!-- 메시지를 표시할 span 요소 -->
+        </p>
+    </div>
+</body>
+<script>
+    // 입력 필드에 focus 및 blur 이벤트 핸들러 등록
+    $('input').on({
+        'focus': function() {
+            $(this).css({'background-color': 'skyblue'}); // 포커스 시 배경색을 하늘색으로 변경
+        },
+        'blur': function() {
+            $(this).css({'background-color': 'white'}); // 포커스 해제 시 배경색을 흰색으로 변경
+        }
+    });
+
+    // 로그인 박스에 마우스를 올리거나 뗄 때 메시지를 표시
+    $('#ex1').hover(function() {
+        $(this).find('span').html('로그인 해 주세요'); // 마우스가 올라갔을 때 메시지 표시
+    }, function() {
+        $(this).find('span').html(''); // 마우스가 나갔을 때 메시지 숨김
+    });
+
+</script>    
+</html>

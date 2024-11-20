@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 문자 인코딩을 UTF-8로 설정 -->
+    <meta charset="UTF-8">
+
+    <!-- 페이지 제목 설정 -->
+    <title>J-Query</title>
+
+    <!-- 페이지의 아이콘 설정 -->
+    <link rel="icon" href="../img/chrome.png">
+
+    <!-- jQuery 라이브러리(슬림 버전) 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+    <!-- 버튼 생성 및 이벤트 삭제를 위한 버튼 -->
+    <button id="btn">버튼 생성</button>
+    <button id="evtDel">이벤트삭제</button>
+    <div style="margin:10px;"></div> <!-- 버튼이 추가될 div -->
+</body>
+<script>
+    // 버튼 클릭 시 새로운 버튼을 생성하는 이벤트 핸들러 등록
+    $('#btn').on('click', function() {
+        // div에 클릭 이벤트가 있는 버튼을 추가
+        $('div').append('<button onclick="clickEvt()">click</button>');
+        $('div').append('<button class="newBtn">click2</button>'); // 클래스가 newBtn인 버튼 추가
+
+        /* 
+        1. 위에서 버튼을 생성한 다음 이벤트를 추가하는 방식
+        // 새로운 버튼에 클릭 이벤트를 추가하는 코드 (주석 처리됨)
+        $('.newBtn').on('click', function() {
+            alert('click!!');
+        });
+        */
+    });
+
+    // 이벤트 삭제 버튼 클릭 시 btn에 등록된 이벤트를 제거
+    $('#evtDel').click(function() {
+        $('#btn').off(); // on으로 등록된 이벤트는 off로 제거 가능
+    });
+
+    // 직접 호출하는 클릭 이벤트 함수
+    function clickEvt() {
+        alert('click!!'); // 버튼 클릭 시 알림 창 표시
+    }
+
+    // 동적으로 생성된 버튼에 클릭 이벤트를 적용하기 위해 document에 이벤트를 위임
+    // $(셀렉터).on('이벤트','타겟',실행함수);
+    // document에 이벤트를 걸어 놓고, target에서 이벤트 발생 시 function 실행
+    $(document).on('click', '.newBtn', function() {
+        alert('클릭!!'); // newBtn 클릭 시 알림 창 표시
+    });
+</script>    
+</html>

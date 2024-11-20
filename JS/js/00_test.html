@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Java Script Tutorial</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <script>
+            // myFunction 함수 정의
+            function myFunction(){
+                // id가 "demo"인 요소의 innerHTML을 'paragraph changed.'로 변경
+                document.getElementById("demo").innerHTML = 'paragraph changed.';
+            }
+        </script>
+    </head>
+    <body>
+        <h1>My Web Page</h1> <!-- 페이지의 주요 제목 -->
+        <p id="demo">A paragraph</p> <!-- id가 "demo"인 문단 -->
+        
+        <script>
+            // 변수 a, b, c, d를 사용하기 전에 로그를 출력하려고 시도
+            console.log('a:'+a); // ReferenceError 발생: a는 아직 정의되지 않음
+            console.log('b:'+b); // ReferenceError 발생: b는 아직 정의되지 않음
+            console.log('c:'+c); // ReferenceError 발생: c는 아직 정의되지 않음
+            console.log('d : ' + d); // ReferenceError 발생: d는 아직 정의되지 않음
+            
+            // 변수의 값을 출력하는 다른 방법
+            console.log('a : ', a); // ReferenceError 발생
+            console.log('b : ', b); // ReferenceError 발생
+            console.log('c : ', c); // ReferenceError 발생
+            console.log('d : ', d); // ReferenceError 발생
+
+            // 변수를 정의
+            let a = 123; // 변수 a를 123으로 정의
+            let b = 3.14; // 변수 b를 3.14로 정의
+            const c = '문자열'; // 상수 c를 '문자열'로 정의
+            const d = false; // 상수 d를 false로 정의
+        </script>
+        
+        <button type="button" onclick="myFunction()">Try it</button> <!-- 버튼 클릭 시 myFunction 호출 -->
+    </body>
+</html>

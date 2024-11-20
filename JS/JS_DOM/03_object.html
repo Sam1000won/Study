@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>DOM SCRIPT</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* 스타일을 추가할 수 있는 공간 (현재 비어 있음) */
+        </style>
+    </head>
+    <body>
+        <!-- 발생한 이벤트에 대한 정보 -->
+        <button onclick="arg1(event, this)">button 1</button> <!-- 첫 번째 버튼 클릭 시 arg1 함수 호출 -->
+        <!-- 이벤트가 발생된 당사자에 대한 정보 -->
+        <button onclick="arg1(this)">button 2</button> <!-- 두 번째 버튼 클릭 시 arg1 함수 호출 -->
+        <p><a href="#" onclick="args2(event,this)">click 3</a></p> <!-- 링크 클릭 시 args2 함수 호출 -->
+        <p><a href="#" onclick="args2(event,this)">click 4</a></p> <!-- 링크 클릭 시 args2 함수 호출 -->
+    </body>
+    <script>
+        // 이벤트 객체와 버튼 요소를 인자로 받는 함수
+        function arg1(obj){
+            console.log(obj); // event 객체 또는 클릭된 요소 출력
+        }
+
+        // 클릭한 a 태그의 내용을 alert에 표시하는 함수
+        function args2(evt, elem){
+            console.log(evt); // 클릭 이벤트 객체 출력
+            console.log(elem); // 클릭된 a 태그 요소 출력
+            var val = elem.innerHTML; // a 태그의 내부 HTML(텍스트) 가져오기
+            alert(val); // 가져온 내용을 alert로 표시
+        }
+    </script>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 문자 인코딩을 UTF-8로 설정 -->
+    <meta charset="UTF-8">
+
+    <!-- 페이지 제목 설정 -->
+    <title>J-Query</title>
+
+    <!-- 페이지의 아이콘 설정 -->
+    <link rel="icon" href="../img/chrome.png">
+
+    <!-- jQuery 라이브러리(슬림 버전) 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+    <!-- 사용자 입력 필드 -->
+    <input type="text" value="some text"/>
+    <p>문자가 쓰여진 <b>강조된</b> 영역</p>
+    <span id="txt"></span> <!-- HTML 태그를 문자로 보여주는 영역 -->
+    <span id="html"></span> <!-- HTML 태그를 효과로 보여주는 영역 -->
+    
+    <fieldset>
+        <legend>숫자 입력</legend>
+        range(0~100) : <input type="range" min="0" max="100" value="30" step="1"/> <!-- 범위 입력 필드 -->
+        <br/>
+        당신이 선택한 값 : <span id="msg">30</span> <!-- 선택한 값 표시 -->
+        <br/>
+        <button id="inc">증가</button> <!-- 증가 버튼 -->
+        <button id="dec">감소</button> <!-- 감소 버튼 -->
+    </fieldset>
+    
+    <fieldset>
+        <legend>라디오버튼</legend>
+        <div>
+            <input type="radio" name="front" value="HTML"/> HTML
+        </div>
+        <div>
+            <input type="radio" name="front" value="CSS"/> CSS
+        </div>
+        <div>
+            <input type="radio" name="front" value="JS"/> JS
+        </div>
+        <span id="selected">선택값 없음</span> <!-- 선택한 라디오 버튼의 값 표시 -->
+    </fieldset>
+</body>
+<script>
+    // 라디오 버튼 클릭 시 선택한 값 표시
+    $('input[type="radio"]').on('click', function() {
+        var val = $(this).val(); // 클릭된 라디오 버튼의 값 가져오기
+        console.log(val); // 콘솔에 출력
+        $('#selected').html(val); // 선택한 값 표시
+    });
+
+    // 증가 및 감소 버튼 클릭 시 범위 값 변경
+    $('button').click(function() {
+        var i = $('input[type="range"]').val(); // 현재 범위 값 가져오기
+        if ($(this).attr('id') == 'inc') { // '증가' 버튼 클릭 시
+            i++;
+        } else { // '감소' 버튼 클릭 시
+            i--;
+        }
+        $('input[type="range"]').val(i); // 범위 입력 필드에 새 값 설정
+        $('#msg').html(i); // 새 값 표시
+    });
+
+    // 마우스 버튼을 누른 상태에서 범위 값 실시간 표시
+    $('input[type="range"]').on('mousedown', function() {
+        $(this).on('mousemove', function() { // 마우스 이동 이벤트 등록
+            var val = $(this).val(); // 현재 범위 값 가져오기
+            $('#msg').html(val); // 새 값 표시
+        });
+    });
+
+    // 마우스 버튼을 떼면 범위 값 실시간 표시 종료
+    $('input[type="range"]').mouseup(function() {
+        $(this).off('mousemove'); // 마우스 무브 이벤트 종료
+    });
+
+    // 텍스트 입력 필드의 속성 및 값 출력
+    var attr = $('input[type="text"]').attr('type'); // 입력 필드의 type 속성 가져오기
+    console.log(attr); // 콘솔에 출력
+    var val = $('input[type="text"]').val(); // 입력 필드의 현재 값 가져오기
+    console.log(val); // 콘솔에 출력
+
+    // 문단의 텍스트 및 HTML 가져오기
+    var txt = $('p').text(); // 문단의 텍스트 가져오기
+    var html = $('p').html(); // 문단의 HTML 가져오기
+    console.log(txt + ' : ' + html); // 텍스트와 HTML을 콘솔에 출력
+
+    // HTML 태그를 문자로 표시
+    $('#txt').text('<h1>HTML 과 TEXT 의 차이</h1>'); // HTML 태그를 문자로 표시
+    $('#html').html('<h1>HTML 과 TEXT 의 차이</h1>'); // HTML 태그를 효과로 표시
+</script>    
+</html>

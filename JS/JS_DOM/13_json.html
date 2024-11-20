@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>DOM SCRIPT</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* 스타일을 추가할 수 있는 공간 (현재 비어 있음) */
+        </style>
+    </head>
+    <body>
+        <input type="text" value=""/> <!-- JSON 문자열을 표시할 입력 필드 -->
+        <button id="btn">JSON 변경</button> <!-- JSON을 객체로 변환하는 버튼 -->
+    </body>
+        
+    <script>        
+        var obj = {}; // 객체를 저장할 변수
+        var arr = []; // 배열을 저장할 변수
+
+        // 1. 객체에 key:value 쌍 추가
+        var info = {age: 20}; // age 속성을 가진 객체 생성
+        info.firstName = 'gil-dong'; // firstName 속성 추가
+        info['lastName'] = 'Hong'; // lastName 속성 추가
+
+        // 2. 배열에 객체 추가
+        arr.push(info); // info 객체를 배열에 추가
+        console.log(arr); // 배열을 콘솔에 출력
+
+        // 3. 객체에 배열 추가
+        obj.list = arr; // list 속성에 배열을 추가
+        console.log(obj); // 객체를 콘솔에 출력
+
+        // JSON 객체를 문자열로 변환
+        var txt = JSON.stringify(obj);  // obj 객체를 JSON 문자열로 변환하여 txt 변수에 저장
+        console.log(txt); // 변환된 문자열을 콘솔에 출력
+
+        // 변환된 JSON 문자열을 입력 필드에 표시
+        document.getElementsByTagName('input')[0].value = txt;
+
+        // 버튼 클릭 시 문자열을 객체로 파싱
+        document.getElementById('btn').addEventListener('click', function(){
+            var obj = JSON.parse(txt);  // JSON 문자열을 객체로 변환
+            console.log(obj); // 변환된 객체를 콘솔에 출력
+            console.log(txt); // 원본 JSON 문자열을 콘솔에 출력
+        });
+    </script>
+</html>

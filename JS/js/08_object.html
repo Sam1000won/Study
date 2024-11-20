@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Java Script Tutorial</title> <!-- 웹 페이지의 제목 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+    </head>
+    <body>
+        <!-- body 부에 JavaScript 코드를 입력: 모든 내용을 다 읽고 나서 자바스크립트를 실행 -->
+        <script>
+            // Object는 Java의 Map<String, Object>와 유사하다.
+            // Object의 키를 속성(Properties)이라고 부른다.
+
+            // 오브젝트 선언 방법 1 - 값을 넣으면서 생성
+            var car = {type: 'Fiat', model: 500, color: 'white'};
+            console.log(car); // 생성된 car 객체 출력
+
+            // 오브젝트 선언 방법 2 - 빈 객체 생성
+            var person = {};
+
+            // 오브젝트 선언 방법 3 - new 키워드를 사용하여 객체 생성
+            var computer = new Object();
+
+            // 데이터 추가하는 방법 (Java의 객체 다루는 것과 유사함)
+            person.name = 'lee'; // name 속성 추가
+            person.gender = 'male'; // gender 속성 추가
+            person.age = 22; // age 속성 추가
+            person.married = false; // married 속성 추가
+            console.log(person); // 생성된 person 객체 출력
+
+            // 추가 방법 2 - 오브젝트는 인덱스가 문자열인 배열처럼 사용 가능
+            // 배열처럼도 쓸 수 있지만, 아래와 같이도 사용할 수 있다.
+            computer['CPU'] = 'Octa Core'; // CPU 속성 추가
+            computer['RAM'] = '128GB'; // RAM 속성 추가
+            computer['HDD'] = '2TB'; // HDD 속성 추가
+            computer['GAME'] = false; // GAME 속성 추가
+            computer['PRICE'] = 1400000; // PRICE 속성 추가
+            console.log(computer); // 생성된 computer 객체 출력
+
+            // 객체 안에도 함수가 들어갈 수 있다.
+            // 변수 안에도 들어갈 수 있기 때문에
+
+            // test(); // 함수로 선언된 것은 선언하기 전에 호출해도 상관없음 (호이스팅)
+
+            // function test(){
+            //     console.log('변수 안에 함수가 들어감?');
+            // }
+
+            // 변수를 사용하여 함수를 정의
+            var test = function(){
+                console.log('변수 안에 함수가 들어감?'); // 함수 호출 시 출력
+            };
+            
+            test(); // 함수를 변수에 넣었을 경우는 선언 후 호출해야 함
+
+            // computer 객체에 메서드 추가
+            computer.on = function(){
+                console.log('Power On'); // 메서드 호출 시 출력
+            };
+            
+            computer.on(); // 메서드 호출
+
+            // 객체의 내용을 꺼내오는 방법 (Java 객체 또는 배열 방식으로 가능)
+            console.log(computer.CPU); // CPU 속성 출력
+            console.log(computer['RAM']); // RAM 속성 출력
+
+        </script>        
+    </body>
+</html>

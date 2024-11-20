@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title></title> <!-- 웹 페이지의 제목 (현재 비어 있음) -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 웹 페이지의 아이콘 설정 -->
+        <style>
+            /* 스타일을 추가할 수 있는 공간 (현재 비어 있음) */
+        </style>
+    </head>
+    <body>
+        <button onclick="myWindow()">창 열기</button> <!-- 버튼 클릭 시 myWindow() 함수 호출 -->
+        <button onclick="closeWin()">창 닫기</button> <!-- 버튼 클릭 시 closeWin() 함수 호출 -->
+    </body>
+    <script>
+        var win; // 새 창을 저장할 변수 선언
+        
+        // 새 창을 여는 함수
+        function myWindow(){
+            // window.open() 메소드를 사용하여 새 창 열기
+            // URL, 제목, 옵션
+            // 크기를 정하지 않으면 새 탭으로 나타난다.
+            win = window.open('https://www.w3schools.com/', '', 
+                              'width=400,height=400,top=500,left=500');     
+            /*
+                width : 창의 너비
+                height : 창의 높이       
+                top : y좌표 (화면의 위쪽에서부터)
+                left : x좌표 (화면의 왼쪽에서부터)
+            */
+        }
+
+        // 열린 창을 닫는 함수
+        function closeWin(){
+            // 새 창을 닫기 위해서는 오픈된 창을 변수에 담아두어야 한다.
+            if (win) { // win이 null이 아닐 경우에만 닫기 시도
+                win.close(); // 열린 창 닫기
+            } else {
+                alert('열린 창이 없습니다.'); // 열린 창이 없을 경우 알림
+            }
+        }
+    </script>
+</html>
