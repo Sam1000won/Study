@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-Query</title> <!-- 페이지 제목 설정 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 페이지 파비콘 설정 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery 라이브러리 불러오기 -->
+    </head>
+    <body>
+        <ol id="list"> <!-- 순서 목록(Ordered List) 생성, ID는 'list' -->
+            <li>List Item 1</li> <!-- 초기 리스트 아이템 -->
+        </ol>
+        <button id="apnd">Append</button> <!-- 리스트 끝에 아이템 추가 버튼 -->
+        <button id="ppnd">Prepend</button> <!-- 리스트 시작에 아이템 추가 버튼 -->
+        <button id="aft">After</button> <!-- 'After' 버튼 (기능은 동일하게 설정됨) -->
+        <button id="bef">Before</button> <!-- 'Before' 버튼 (기능은 동일하게 설정됨) -->
+    </body>
+    <script>
+        var i = 1; // 리스트 아이템 번호를 추적하기 위한 변수 초기화
+
+        // Append 버튼 클릭 시 실행되는 함수
+        $('#apnd').click(function() {
+            i++; // 아이템 번호 증가
+            $('#list').append('<li>List Item ' + i + '</li>'); // 새로운 리스트 아이템을 리스트 끝에 추가
+        });
+
+        // Prepend 버튼 클릭 시 실행되는 함수
+        $('#ppnd').click(function() {
+            i++; // 아이템 번호 증가
+            $('#list').prepend('<li>List Item ' + i + '</li>'); // 새로운 리스트 아이템을 리스트 시작에 추가
+        });
+
+        // After 버튼 클릭 시 실행되는 함수
+        $('#aft').click(function() {
+            i++; // 아이템 번호 증가
+            $('#list').append('<li>List Item ' + i + '</li>'); // 새로운 리스트 아이템을 리스트 끝에 추가
+        });
+
+        // Before 버튼 클릭 시 실행되는 함수
+        $('#bef').click(function() {
+            i++; // 아이템 번호 증가
+            $('#list').prepend('<li>List Item ' + i + '</li>'); // 새로운 리스트 아이템을 리스트 시작에 추가
+        });        
+    </script>
+</html>

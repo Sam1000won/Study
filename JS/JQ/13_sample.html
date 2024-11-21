@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-Query</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="../img/chrome.png">
+        <!-- 외부에 있는 jQuery 라이브러리 불러오기 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+        <script>
+            // 문서가 준비되면 실행되는 함수
+            $(document).ready(function(){
+                // 버튼 클릭 이벤트 핸들러 설정
+                $('button').on('click', function(){
+                    // var 키워드가 잘못 사용됨 - 변수 선언을 올바르게 수정
+                    var val = $('input[type="text"]').val(); // 'inut' 오타 수정
+                    var link = 'http://google.com'; // 기본 링크 설정
+                    
+                    // 입력값이 'adin'일 경우 링크 변경
+                    if(val == 'adin'){
+                        link = 'https://gdu.co.kr';
+                    }
+                    
+                    // <a> 태그의 href 속성 변경
+                    $('a').attr('href', link);
+                });
+            });
+        </script>  
+    </head>
+    <body>
+        <p>
+            ID : <input type="text" value="/"/> <!-- 텍스트 입력 필드 -->
+            <button>확인</button> <!-- 버튼 -->
+        </p>
+        <a href="#">링크 이동</a> <!-- href 속성 잘못된 따옴표 수정 -->
+    </body>
+</html>

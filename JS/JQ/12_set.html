@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-Query</title>
+        <meta charset="UTF-8">
+        <!-- jQuery 라이브러리 추가: slim 버전은 AJAX 및 효과 기능이 없음 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    </head>
+    <body>
+        <p id="test1">문자열</p>  <!-- id가 test1인 단락 -->
+        <p id="test2">문자열1</p>  <!-- id가 test2인 단락 (잘못된 id 속성 수정) -->
+        <input id="test3" type="text" value="홍길동"/> <!-- id가 test3인 텍스트 입력 -->
+        <input id="test4" type="text" value="비밀번호"/> <!-- id가 test4인 텍스트 입력 -->
+        
+        <!-- 잘못된 태그 수정 -->
+        <div></div> <!-- 'dic' 대신 'div' 사용 -->
+        <button>속성변경</button> <!-- 버튼 생성 -->
+    </body>
+    <script>
+        // test1의 내용을 test() 함수로 변경 (잘못된 메서드 사용 수정)
+        $('#test1').html('<mark>변경된 문자열</mark>'); // .test() 대신 .html() 사용
+        $('#test2').html('<mark>변경된 문자열</mark>'); // test2의 내용을 변경
+        
+        // 버튼 클릭 이벤트 핸들러 설정
+        $('button').on('click', function() { // 'clik' 오타 수정
+            $('#test3').attr('onclick', 'alert("OK")'); // test3에 클릭 이벤트 추가
+            $('#test4').attr('type', 'password'); // test4의 타입을 비밀번호로 변경
+        });
+
+        // test 함수 정의
+        function test(str) {
+            alert(str); // 전달된 문자열을 알림창으로 표시
+        }
+
+        // div에 버튼 추가: 잘못된 속성 수정
+        $('div').html('<input type="button" value="click" onclick="test(\'문자열\')" />'); 
+        // 'input type="button value="click"' 부분에서 잘못된 따옴표 수정
+        // onclick 속성에서 문자열을 올바르게 이스케이프하여 사용
+    </script>
+</html>

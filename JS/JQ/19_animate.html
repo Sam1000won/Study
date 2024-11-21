@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-Query</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="../img/chrome.png"> <!-- 파비콘 설정 -->
+        <!-- 외부에 있는 jQuery 라이브러리 불러오기 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            #obj {
+                width: 100px; /* 객체 너비 */
+                height: 100px; /* 객체 높이 */
+                margin: 5px; /* 마진 */
+                background-color: blue; /* 배경색 설정 */
+                position: absolute; /* 절대 위치 설정 */
+            }
+        </style>
+    </head>
+    <body>
+        <button id="left">◀</button> <!-- 왼쪽 이동 버튼 -->
+        <button id="right">▶</button> <!-- 오른쪽 이동 버튼 -->
+        <button id="stop">■</button> <!-- 애니메이션 정지 버튼 -->
+        <button id="sepcial">★</button> <!-- 특수 애니메이션 버튼 -->
+        <button id="step">◈</button> <!-- 단계별 애니메이션 버튼 -->
+        <div id="obj"></div> <!-- 애니메이션 대상 div -->
+    </body>
+    <script>
+        // 오른쪽 버튼 클릭 시 1000px 오른쪽으로 이동
+        $('#right').click(function() {
+            $('#obj').animate({left: '+=1000'}, 3000, 'swing');
+        });
+
+        // 왼쪽 버튼 클릭 시 100px 왼쪽으로 이동
+        $('#left').click(function() {
+            $('#obj').animate({left: '-=100'}, 'slow', 'swing');
+        });
+
+        // 정지 버튼 클릭 시 애니메이션 정지
+        $('#stop').click(function() {
+            $('#obj').stop(); // 현재 진행 중인 애니메이션을 정지
+        });
+
+        // 특수 버튼 클릭 시 이동 및 투명도 변경
+        $('#sepcial').click(function() {
+            var css = {
+                left: '+=500', // 500px 오른쪽으로 이동
+                top: '+=100', // 100px 아래로 이동
+                opacity: '-=0.3' // 투명도 0.3 감소
+            }
+            $('#obj').animate(css, 1500, 'linear', function() {
+                alert('animation 완료'); // 애니메이션 완료 후 알림
+            });
+        });
+
+        // 단계별 애니메이션 버튼 클릭 시 단계별 이동
+        $('#step').click(function() {
+            $('#obj').animate({left: '+=500'}, 'slow') // 500px 오른쪽으로 이동
+                .animate({top: '+=500'}, 'slow') // 500px 아래로 이동
+                .animate({left: '-=500'}, 'slow') // 500px 왼쪽으로 이동
+                .animate({top: '-=500'}, 'slow'); // 500px 위로 이동
+        });
+    </script>
+</html>

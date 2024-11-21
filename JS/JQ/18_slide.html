@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-Query</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="../img/chrome.png"> <!-- 파비콘 설정 -->
+        <!-- 외부에 있는 jQuery 라이브러리 불러오기 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            div {
+                text-align: center; /* 텍스트 중앙 정렬 */
+                background-color: yellowgreen; /* 배경색 설정 */
+                border: 1px solid green; /* 경계선 스타일 */
+                padding: 5px; /* 여백 */
+                margin: 2px; /* 마진 */
+                cursor: pointer; /* 마우스 커서 스타일 */
+            }
+
+            .panel {
+                padding: 100px 0; /* 상하 여백 */
+                display: none; /* 초기 상태에서 숨김 */
+            }
+        </style>        
+    </head>
+    <body>
+        <div id="flip1">메모1</div> <!-- 첫 번째 메모 -->
+        <div class="panel" id="p1">sub menu</div> <!-- 첫 번째 서브 메뉴 -->
+        <div id="flip2">메모2</div> <!-- 두 번째 메모 -->
+        <div class="panel" id="p2">sub menu</div> <!-- 두 번째 서브 메뉴 -->
+    </body>
+    <script>
+        // 첫 번째 메모 클릭 시 첫 번째 서브 메뉴 토글
+        $('#flip1').on('click', function() {
+            $('#p1').slideToggle('fast'); // 빠른 속도로 서브 메뉴 표시/숨김
+        });
+
+        // 두 번째 메모에 마우스가 들어갈 때
+        $('#flip2').on('mouseenter', function() {
+            $('#p2').slideDown('slow'); // 서브 메뉴 표시
+        });
+
+        // 두 번째 메모에서 마우스가 나갈 때
+        $('#flip2').on('mouseleave', function() {
+            $('#p2').slideUp('slow'); // 서브 메뉴 숨김
+        });
+    </script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-Query</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="../img/chrome.png"> <!-- 잘못된 따옴표 수정 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+        <style>
+            .item div {
+                display: inline; /* 각 아이템의 내부 div를 inline으로 표시 */
+            }
+            div.item {
+                width: 80%; /* 아이템의 너비 */
+                height: 30px; /* 아이템의 높이 */
+                border: 1px solid lightgray; /* 경계선 스타일 */
+                cursor: pointer; /* 마우스 커서 스타일 */
+                font-size: 13px; /* 글꼴 크기 */
+                padding: 10px 0 0 10px; /* 상단 여백 및 왼쪽 여백 */
+                margin-top: 5px; /* 상단 마진 */
+            }
+            div.cnt {
+                float: right; /* 오른쪽으로 정렬 */
+                height: 20px; /* 높이 설정 */
+                width: 20px; /* 너비 설정 */
+                border: 1px solid lightgray; /* 경계선 스타일 */
+                text-align: center; /* 텍스트 중앙 정렬 */
+                color: orange; /* 글자 색상 */
+                font-weight: 600; /* 글자 두께 */
+                margin-right: 10px; /* 오른쪽 여백 */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="item"> <!-- 첫 번째 아이템 -->
+            <div>A 아이템 구매 수</div>
+            <div class="cnt">0</div> <!-- 구매 수 초기값 -->
+        </div>
+        <div class="item"> <!-- 두 번째 아이템: class 추가 -->
+            <div>C 아이템 구매 수</div>
+            <div class="cnt">0</div> <!-- 구매 수 초기값 -->
+        </div>
+    </body>
+    <script>
+        // 아이템 클릭 이벤트 핸들러
+        $('div.item').click(function() {
+            var cnt = parseInt($(this).find('.cnt').html()); // 현재 구매 수 가져오기
+            cnt++; // 구매 수 증가
+            $(this).find('.cnt').html(cnt); // 업데이트된 구매 수 표시
+        });
+    </script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-Query</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="../img/chrome.png"> <!-- 파비콘 설정 -->
+        <!-- 외부에 있는 jQuery 라이브러리 불러오기 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            div {
+                width: 100px; /* div의 너비 */
+                padding: 10px 0; /* 상하 여백 */
+                text-align: center; /* 텍스트 중앙 정렬 */
+                background-color: green; /* 배경색 설정 */
+                color: white; /* 텍스트 색상 설정 */
+            }
+        </style>
+    </head>
+    <body>
+        <div>메뉴1</div> <!-- 메뉴 표시 -->
+        <ul>
+            <li>List 01</li>
+            <li>List 02</li>
+            <li>List 03</li>
+            <li>List 04</li>
+            <li>List 05</li>
+        </ul>
+        <button id="toggle">OFF</button> <!-- 버튼 초기 상태는 OFF -->
+        <p>List 01</p> <!-- 같은 텍스트가 반복됨 -->
+        <p>List 01</p>
+        <p>List 01</p>
+        <p>List 01</p>
+        <p>List 01</p>
+    </body>
+    <script>
+        // ul 요소를 숨김
+        $('ul').hide(); // 초기 상태에서 목록을 숨김
+
+        // 메뉴 div에 마우스 오버 시 ul 표시 및 마우스 아웃 시 숨김
+        $('div').hover(function(){
+            $('ul').show(1000); // 1초 동안 ul을 표시
+        }, function(){
+            $('ul').hide(1000); // 1초 동안 ul을 숨김
+        });
+
+        // 토글 버튼 클릭 이벤트
+        $('#toggle').click(function(){
+            // p 요소를 토글하며 애니메이션 효과 적용
+            $('p').toggle('slow', 'swing', function(){
+                // 애니메이션 종료 후 실행되는 콜백 함수
+                if ($('#toggle').html() == 'OFF') {
+                    $('#toggle').html('ON'); // 버튼 텍스트를 'ON'으로 변경
+                } else {
+                    $('#toggle').html('OFF'); // 버튼 텍스트를 'OFF'로 변경
+                }
+            });
+        });
+    </script>
+</html>

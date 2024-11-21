@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-Query</title> <!-- 페이지 제목 설정 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 페이지 파비콘 설정 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery 라이브러리 불러오기 -->
+        <style>
+            div.parent { /* 부모 요소 스타일 */
+                background-color: yellow; /* 배경색 설정 */
+                width: 400px; /* 너비 설정 */
+                height: 180px; /* 높이 설정 */
+                text-align: center; /* 텍스트 중앙 정렬 */
+                margin: 10px; /* 외부 여백 설정 */
+            }
+            .parent div { /* 자식 요소 스타일 */
+                background-color: blue; /* 자식 요소 배경색 설정 */
+                width: 300px; /* 자식 요소 너비 설정 */
+                height: 50px; /* 자식 요소 높이 설정 */
+                margin: 20px auto; /* 상하 여백과 중앙 정렬 */
+                font-weight: 600; /* 텍스트 두께 설정 */
+                color: white; /* 텍스트 색상 설정 */
+                line-height: 45px; /* 텍스트 수직 정렬을 위한 줄 높이 설정 */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parent"> <!-- 부모 요소 -->
+            <b>Parent Element</b> <!-- 부모 요소 제목 -->
+            <div class="ch1">Child Element 1</div> <!-- 첫 번째 자식 요소 -->
+            <div class="ch2">Child Element 2</div> <!-- 두 번째 자식 요소 -->
+        </div>
+        <button id="remove">remove()</button> <!-- 부모 요소 제거 버튼 -->
+        <button id="empty">empty()</button> <!-- 자식 요소 비우기 버튼 -->
+    </body>
+    <script>
+        // 'remove()' 버튼 클릭 시 부모 요소를 완전히 제거
+        $('#remove').click(function() {
+            $('.parent').remove(); // .parent 클래스를 가진 요소 제거
+        });
+
+        // 'empty()' 버튼 클릭 시 부모 요소의 자식 요소를 비움
+        $('#empty').click(function() {
+            $('.parent').empty(); // .parent 클래스를 가진 요소의 자식 요소를 모두 제거
+        });
+    </script>
+</html>

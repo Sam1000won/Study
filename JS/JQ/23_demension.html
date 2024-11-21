@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-Query</title> <!-- 페이지 제목 설정 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 페이지 파비콘 설정 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery 라이브러리 불러오기 -->
+        <style>
+            img { /* 이미지 스타일 설정 */
+                width: 400px; /* 이미지 너비 설정 */
+                height: 300px; /* 이미지 높이 설정 */
+                padding: 10px; /* 이미지 패딩 설정 */
+                border: 3px solid black; /* 이미지 테두리 설정 */
+                margin: 5px; /* 이미지 마진 설정 */
+            }
+        </style>
+    </head>
+    <body>
+        <img src="../img/demension.png" alt="샘플 이미지"/> <!-- 이미지 요소 -->
+    </body>
+    <script>
+        // jQuery를 사용하여 다양한 너비 측정 방법을 보여줍니다.
+
+        // width() : 요소의 너비 (padding, border, margin 제외)
+        console.log('width: ' + $('img').width()); // 400
+
+        // innerWidth() : 요소의 너비 + padding
+        console.log('innerWidth: ' + $('img').innerWidth()); // 400 + 10 + 10 = 420
+
+        // outerWidth() : 요소의 너비 + padding + border
+        console.log('outerWidth: ' + $('img').outerWidth()); // 400 + 10 + 10 + 3 + 3 = 426
+
+        // outerWidth(true) : 요소의 너비 + padding + border + margin
+        console.log('outerWidth(true): ' + $('img').outerWidth(true)); // 400 + 10 + 10 + 3 + 3 + 5 + 5 = 436
+    </script>    
+</html>
+
+<!-- 
+$('img').width(): 이미지의 기본 너비인 400px을 반환합니다.
+$('img').innerWidth(): 패딩을 포함한 너비로, 400px + 10px(좌우 패딩) = 420px을 반환합니다.
+$('img').outerWidth(): 패딩과 테두리를 포함한 너비로, 400px + 10px + 10px + 3px + 3px = 426px을 반환합니다.
+$('img').outerWidth(true): 패딩, 테두리, 마진을 모두 포함한 너비로, 400px + 10px + 10px + 3px + 3px + 5px + 5px = 436px을 반환합니다.
+-->

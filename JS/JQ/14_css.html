@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-Query</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="../img/chrome.png"> <!-- 파비콘 설정 -->
+        <!-- 외부에 있는 jQuery 라이브러리 불러오기 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    </head>
+    <body>
+        <p id="ex1" style="color: blue; font-size: 30px;">스타일 적용된 텍스트</p> <!-- 스타일이 적용된 텍스트 -->
+        <p id="ex2">스타일이 적용 되지 않은 텍스트</p> <!-- 스타일이 적용되지 않은 텍스트 -->
+    </body>
+    <script>
+        // ex1 요소의 색상과 글자 크기 가져오기
+        var color = $('#ex1').css('color'); // ex1의 색상
+        var size = $('#ex1').css('font-size'); // ex1의 글자 크기
+        console.log(color, size); // 콘솔에 색상과 글자 크기 출력
+
+        // ex2 요소에 ex1의 스타일 적용하기
+        $('#ex2').css({'color': color, 'font-size': size}); // ex2의 스타일 변경
+    </script>
+</html>

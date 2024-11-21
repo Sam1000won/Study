@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-Query</title> <!-- 페이지 제목 설정 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 페이지 파비콘 설정 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery 라이브러리 불러오기 -->
+        <style>
+            table, th, td { /* 테이블, 헤더, 셀 스타일 설정 */
+                border: 1px solid black; /* 테이블 경계선 설정 */
+                border-collapse: collapse; /* 경계선 겹침 방지 */
+            }
+            th, td { /* 헤더와 셀의 여백 설정 */
+                padding: 10px 20px; /* 상하, 좌우 여백 설정 */
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>학번</th> <!-- 학번 헤더 -->
+                    <th>이름</th> <!-- 이름 헤더 -->
+                    <th>과목</th> <!-- 과목 헤더 -->
+                    <th>학점</th> <!-- 학점 헤더 -->
+                    <th>설명</th> <!-- 설명 헤더 -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 데이터가 추가될 부분 -->
+            </tbody>
+        </table>
+        <!-- 입력 필드 -->
+        학번 : <input type="text" id="no"><br/>
+        이름 : <input type="text" id="name"><br/>
+        과목 : <input type="text" id="sub"><br/>
+        학점 : <input type="text" id="score"><br/>
+        설명 : <input type="text" id="desc"><br/>
+        <button>입력</button> <!-- 데이터 입력 버튼 -->
+    </body>
+    <script>
+        // 버튼 클릭 시 실행되는 함수
+        $('button').click(function() {
+            // 모든 텍스트 입력 필드를 선택
+            var $input = $('input[type="text"]');
+            console.log($input); // 선택한 입력 필드를 콘솔에 출력
+
+            var content = '<tr>'; // 새로운 행 생성 시작
+            // 입력 필드의 값을 순회하여 새로운 셀을 생성
+            for (var i = 0; i < $input.length; i++) {
+                content += '<td>' + $input.eq(i).val() + '</td>'; // 각 입력 필드의 값을 추가
+            }
+            content += '</tr>'; // 행 생성 종료
+
+            // 생성된 행을 tbody에 추가
+            $('tbody').append(content);
+            // 입력 필드 초기화
+            $input.val(''); // 모든 입력 필드의 값을 초기화
+        });
+    </script>
+</html>

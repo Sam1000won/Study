@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-Query</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="../img/chrome.png"> <!-- 파비콘 설정 -->
+        <!-- 외부에 있는 jQuery 라이브러리 불러오기 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+        <style>
+            .ex {
+                background-color: cadetblue; /* 배경색 설정 */
+                text-align: center; /* 텍스트 가운데 정렬 */
+                width: 200px; /* 너비 설정 */
+                height: 200px; /* 높이 설정 */
+            }
+        </style>   
+    </head>
+    <body>
+        <button id="add">클래스 추가</button> <!-- 클래스 추가 버튼 -->
+        <button id="remove">클래스 삭제</button> <!-- 클래스 삭제 버튼 -->
+        <button id="toggle">TOGGLE</button> <!-- 클래스 토글 버튼 -->
+        <div></div> <!-- 스타일을 적용할 빈 div -->
+    </body>
+    <script>
+        // 클래스 추가 버튼 클릭 이벤트
+        $('#add').click(function() {
+            $('div').addClass("ex"); // div에 'ex' 클래스 추가
+        });
+
+        // 클래스 삭제 버튼 클릭 이벤트
+        $('#remove').on('click', function() {
+            $('div').removeClass('ex'); // div에서 'ex' 클래스 삭제
+        });
+
+        // 토글 버튼 클릭 이벤트
+        $('#toggle').click(function() {
+            $('div').toggleClass('ex'); // div의 'ex' 클래스를 토글
+        });
+
+        // 모든 버튼 클릭 이벤트
+        $('button').on('click', function() {
+            var has = $('div').hasClass('ex'); // div에 'ex' 클래스가 있는지 확인
+            if (has) {
+                $('#toggle').text('OFF'); // 클래스가 있을 경우 버튼 텍스트를 'OFF'로 설정
+            } else {
+                $('#toggle').text('ON'); // 클래스가 없을 경우 버튼 텍스트를 'ON'으로 설정
+            }
+        });
+    </script>
+</html>
