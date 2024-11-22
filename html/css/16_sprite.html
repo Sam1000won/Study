@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <title>CSS TUTORIALS</title> <!-- 페이지 제목 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 페이지 아이콘 설정 -->
+        <style>
+            li {
+                width: 110px; /* 리스트 아이템의 너비 설정 */
+                height: 110px; /* 리스트 아이템의 높이 설정 */
+                list-style-type: none; /* 기본 리스트 스타일 제거 */
+                float: left; /* 리스트 아이템을 왼쪽으로 부동 처리 */
+            }
+            .birds1 {
+                width: 110px; /* 첫 번째 새 아이콘의 너비 설정 */
+                height: 110px; /* 첫 번째 새 아이콘의 높이 설정 */
+                background: url(../img/spriteImg.png) 0px 0px; /* 배경 이미지와 시작 위치 설정 */
+            }
+            .birds1:hover {
+                background: url(../img/spriteImg.png) -109px 0px; /* 마우스 오버 시 배경 이미지 위치 변경 */
+            }
+            .birds2 {
+                width: 110px; /* 두 번째 새 아이콘의 너비 설정 */
+                height: 90px; /* 두 번째 새 아이콘의 높이 설정 */
+                background: url(../img/spriteImg.png) -109px 185px; /* 배경 이미지와 시작 위치 설정 */
+                margin-top: 20px; /* 상단 여백 설정 */
+                margin-left: 20px; /* 왼쪽 여백 설정 */
+            }
+            .birds2:hover {                
+                background: url(../img/spriteImg.png) -210px 107px; /* 마우스 오버 시 배경 이미지 위치 변경 */
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li class="birds1"></li> <!-- 첫 번째 새 아이콘을 표시하는 리스트 아이템 -->
+            <li class="birds2"></li> <!-- 두 번째 새 아이콘을 표시하는 리스트 아이템 -->
+        </ul>
+    </body>
+</html>

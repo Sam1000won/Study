@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <title>CSS TUTORIALS</title> <!-- 페이지 제목 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 페이지 아이콘 설정 -->
+        
+        <style>
+            div {
+                width: 100px; /* div 요소의 너비 설정 */
+                height: 25px; /* div 요소의 높이 설정 */
+                border: 1px solid black; /* 테두리 설정 */
+                text-align: center; /* 텍스트 중앙 정렬 */
+                margin: 5px; /* 외부 여백 설정 */
+                float: left; /* 요소를 왼쪽으로 부동 처리 */
+                transition: all 0.5s; /* 모든 속성에 대해 0.5초의 전환 효과 설정 */
+            }
+            div:hover {
+                background-color: yellowgreen; /* 마우스 오버 시 배경색 변경 */
+                /* width: 200px; */ /* 주석 처리된 코드: 마우스 오버 시 너비 변경 예시 */
+            }
+
+            /* 필터 순서 중요 */
+            /* 기본 링크 스타일 */
+            a:link {
+                text-decoration: none; /* 기본 링크에 밑줄 제거 */
+                color: red; /* 링크 색상 설정 */
+                font-weight: 600; /* 글자 두께 설정 */
+            }
+            /* 방문한 링크 스타일 */
+            a:visited {
+                text-decoration: none; /* 방문한 링크에 밑줄 제거 */
+                color: orange; /* 링크 색상 설정 */
+            }
+            /* 마우스 오버 시 링크 스타일 */
+            a:hover {
+                text-decoration: underline; /* 마우스 오버 시 밑줄 추가 */
+                color: blue; /* 링크 색상 변경 */
+            }
+            /* 클릭 중 링크 스타일 */
+            a:active {
+                text-decoration: none; /* 클릭 중 밑줄 제거 */
+                color: green; /* 링크 색상 변경 */
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <a href="https://www.daum.net/">DAUM</a> <!-- DAUM 링크 -->
+        </div>                
+        <div>
+            <a href="https://www.google.co.kr/">GOOGLE</a> <!-- GOOGLE 링크 -->
+        </div>                
+        <div>
+            <a href="https://www.naver.com/">NAVER</a> <!-- NAVER 링크 -->
+        </div>                
+        <div>
+            <a href="https://www.nate.com/">NATE</a> <!-- NATE 링크 -->
+        </div>                
+    </body>
+</html>

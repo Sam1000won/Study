@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>회원가입</title>
+        <style>
+            /* 글자 두께 설정 클래스 */
+            .fw {
+                font-weight: 600; /* 두께 설정 */
+            }
+            /* 테이블, 행, 셀 스타일 설정 */
+            table, tr, td {
+                border: 1px solid black; /* 테두리 설정 */
+                border-collapse: collapse; /* 테두리 중복 제거 */
+                padding: 10px; /* 내부 여백 설정 */                                   
+            }  
+            td b {
+                text-align: center; /* 텍스트 중앙 정렬 */
+            }    
+            /* 입력 필드의 너비 설정 */
+            input[type="text"], input[type="password"], input[type="email"], input[type="range"] {
+                width: 100%; /* 전체 너비 사용 */
+            }                          
+        </style>
+    </head>
+    <body>
+        <h3>회원가입 페이지</h3> <!-- 페이지 제목 -->
+        <hr/> <!-- 수평선 -->
+        <table>            
+            <tr>
+                <td><b><div>아이디</div></b></td> <!-- 아이디 입력 필드 제목 -->
+                <td><input type="text"/></td> <!-- 아이디 입력 필드 -->
+            </tr>
+            <tr>
+                <td><b><div>비밀번호</div></b></td> <!-- 비밀번호 입력 필드 제목 -->
+                <td><input type="password"/></td> <!-- 비밀번호 입력 필드 -->
+            </tr>
+            <tr>
+                <td><b><div>비밀번호 확인</div></b></td> <!-- 비밀번호 확인 필드 제목 -->
+                <td><input type="password"/></td> <!-- 비밀번호 확인 필드 -->
+            </tr>
+            <tr>
+                <td><b><div>이 름</div></b></td> <!-- 이름 입력 필드 제목 -->
+                <td><input type="text"/></td> <!-- 이름 입력 필드 -->
+            </tr>
+            <tr>
+                <td><b><div>이 메 일</div></b></td> <!-- 이메일 입력 필드 제목 -->
+                <td><input type="email"/></td> <!-- 이메일 입력 필드 -->
+            </tr>
+            <tr>
+                <td><b><div>생년월일</div></b></td> <!-- 생년월일 입력 필드 제목 -->
+                <td>
+                    <!-- 생년월일을 위한 선택 박스 -->
+                    <select name="" id="">
+                        <option value="1987">1987</option> <!-- 생년 선택 -->
+                    </select>
+
+                    <select name="" id="">
+                        <option value="04">04</option> <!-- 월 선택 -->
+                    </select>
+
+                    <select name="" id="">
+                        <option value="01">01</option> <!-- 일 선택 -->
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><b><div>성별</div></b></td> <!-- 성별 입력 필드 제목 -->
+                <td>
+                    <!-- 성별 선택을 위한 라디오 버튼 -->
+                    <input type="radio" name="gender" value="male"/>남자
+                    <input type="radio" name="gender" value="female"/>여자
+                </td>
+            </tr>
+            <tr>
+                <td><b><div>취미</div></b></td> <!-- 취미 입력 필드 제목 -->
+                <td>
+                    <!-- 취미 선택을 위한 체크박스 -->
+                    <input type="checkbox" name="hobby" value="drive"/>드라이브 
+                    <input type="checkbox" name="hobby" value="sport"/>스포츠
+                    <input type="checkbox" name="hobby" value="game"/>게임
+                    <input type="checkbox" name="hobby" value="fishhook"/>낚시
+                </td>
+            </tr>
+            <tr>
+                <td><b><div>나이(0~100)</div></b></td> <!-- 나이 입력 필드 제목 -->
+                <td>
+                    <!-- 나이를 입력하기 위한 숫자 필드 -->
+                    <input type="number" name="qty" min="0" max="100" value="20"/>
+                </td>
+            </tr>
+            <tr>
+                <td><b><div>보안등급</div></b></td> <!-- 보안 등급 입력 필드 제목 -->
+                <td>
+                    <!-- 보안 등급을 조절하기 위한 범위 입력 필드 -->
+                    <input type="range" min="0" max="10" value="0" step="1"/>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <title>CSS TUTORIALS</title> <!-- 페이지 제목 -->
+        <style>
+            body {
+                /* 배경 이미지 설정 */
+                background-image: url("../img/img01.jpg"); /* 첫 번째 배경 이미지 */
+                /* 화면의 크기보다 이미지가 작으면 화면을 모두 채울 때까지 반복된다. */
+                
+                /* 반복을 원치 않을 경우 아래의 내용을 추가하면 된다. */
+                /* background-repeat: repeat-x; */ /* 수평 방향으로 반복 */
+                /* background-repeat: repeat-y; */ /* 수직 방향으로 반복 */
+                /* background-repeat: no-repeat; */ /* 반복하지 않음 */
+                
+                /* 좌측 최상단을 좌표값 (0,0)으로 잡는다. */
+                /* background-position: center; */ /* 배경 이미지를 중앙에 위치 */
+                
+                /* 두 번째 배경 이미지와 속성 설정 */
+                background: url(../img/img03.jpg) no-repeat right bottom; /* 우측 하단에 표시 */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- img 태그와 background image의 차이는? -->
+        <!-- 이미지의 선택을 할 수가 없다. -->
+        <img src="../img/img04.jpg"/> <!-- 본문에 표시되는 이미지 -->
+    </body> 
+</html>

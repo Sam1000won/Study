@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <title>CSS TUTORIALS</title> <!-- 페이지 제목 -->
+        <style>
+            body {
+                /* 해상도보다 큰 이미지가 들어오면 화면에 맞게 잘린다. */
+                background-image: url("../img/lovlies.png"); /* 배경 이미지 설정 */
+
+                /* cover : 기본값, 이미지의 변형이 생기거나 잘리더라도 화면을 채운다. */                
+                /* contain : 비율이 벗어나지 않는 선에서 이미지를 잘리지 않게 축소시킨다. */
+                /* background-size: contain; */ /* 비율을 유지하며 축소 */
+
+                /* x, y 크기를 지정할 수도 있다. */
+                background-size: 1000px 500px; /* 배경 이미지의 크기를 1000px x 500px로 설정 */
+
+                /* 원래사이즈에서 50%로 설정 */
+                /* background-size: 50% 50%; */ /* 주석 처리된 원래사이즈의 50% */
+
+                background-repeat: no-repeat; /* 배경 이미지 반복을 하지 않음 */
+                background-position: center; /* 배경 이미지를 중앙에 위치 */
+                background-color: antiquewhite; /* 배경 색상 설정 */
+            }
+        </style>
+    </head>
+    <body>        
+        <!-- <img src="../img/img04.jpg"/> --> <!-- 본문에 이미지가 표시되지 않도록 주석 처리됨 -->
+    </body> 
+</html>

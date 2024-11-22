@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <title>CSS TUTORIALS</title> <!-- 페이지 제목 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 페이지 아이콘 설정 -->
+        
+        <style>
+            div {
+                /* div 요소의 기본 스타일을 설정할 수 있음 */
+            }
+
+            #div1 {
+                text-align: center; /* 텍스트 중앙 정렬 */
+                border: 3px dashed green; /* 녹색 대시 테두리 */
+                background-color: greenyellow; /* 배경색 설정 */
+                width: 200px; /* 너비 설정 */
+                height: 200px; /* 높이 설정 */
+                z-index: 2; /* 쌓임 순서 설정 (위쪽에 위치) */
+                position: relative; /* 상대 위치 설정 */
+                top: 30px; /* 위쪽으로 30px 이동 */
+                /* opacity: 0.7; */ /* 투명도 설정 (주석 처리됨) */
+            }
+
+            #div2 {
+                text-align: center; /* 텍스트 중앙 정렬 */
+                border: 3px dashed red; /* 빨간색 대시 테두리 */
+                background-color: orange; /* 배경색 설정 */
+                width: 200px; /* 너비 설정 */
+                height: 200px; /* 높이 설정 */
+                z-index: 3; /* 쌓임 순서 설정 (가장 위쪽에 위치) */
+                position: absolute; /* 절대 위치 설정 */
+                top: -30px; /* 위쪽으로 -30px 이동 (부모 div의 위쪽에 위치) */
+                left: 5px; /* 왼쪽으로 5px 이동 */
+                /* opacity: 0.7; */ /* 투명도 설정 (주석 처리됨) */
+            }
+
+            #div3 {
+                text-align: center; /* 텍스트 중앙 정렬 */
+                border: 3px dashed palevioletred; /* 연한 자홍색 대시 테두리 */
+                background-color: pink; /* 배경색 설정 */
+                width: 200px; /* 너비 설정 */
+                height: 200px; /* 높이 설정 */
+                z-index: 1; /* 쌓임 순서 설정 (가장 아래쪽에 위치) */
+                position: relative; /* 상대 위치 설정 */
+                top: -150px; /* 위쪽으로 -150px 이동 */
+                left: 160px; /* 왼쪽으로 160px 이동 */
+                /* opacity: 0.7; */ /* 투명도 설정 (주석 처리됨) */
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+            DIV1 <!-- 첫 번째 div 요소 -->
+            <div id="div2">DIV2</div> <!-- 두 번째 div 요소 (절대 위치) -->
+        </div>
+        
+        <div id="div3">DIV3</div> <!-- 세 번째 div 요소 -->
+    </body>
+</html>

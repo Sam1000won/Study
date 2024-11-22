@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <title>CSS TUTORIALS</title> <!-- 페이지 제목 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 페이지 아이콘 설정 -->        
+        <style>
+            div {
+                width: 200px; /* div 요소의 너비 설정 */
+                height: 200px; /* div 요소의 높이 설정 */
+                text-align: center; /* 텍스트 중앙 정렬 */
+            }
+            
+            div.static {
+                background-color: yellow; /* 배경색을 노란색으로 설정 */
+                position: static; /* 기본 위치 설정 (기본값) */
+            }
+
+            div.relative {
+                background-color: aqua; /* 배경색을 청록색으로 설정 */
+                position: relative; /* 상대 위치 설정 */
+                top: 1000px; /* 위쪽에 있는 static 요소로부터 1000px 떨어짐 */
+                left: 200px; /* 화면의 왼쪽으로부터 200px 떨어짐 */
+            }            
+            
+            div.absolute {
+                width: 100px; /* 절대 위치 요소의 너비 설정 */
+                height: 100px; /* 절대 위치 요소의 높이 설정 */
+                border: 3px solid red; /* 테두리를 빨간색으로 설정 */
+                position: absolute; /* 절대 위치 설정 */
+                top: 28%; /* 상위 요소의 28% 위치에 배치 */
+                left: 24%; /* 상위 요소의 24% 위치에 배치 */
+            }
+
+            div.fixed {
+                background-color: burlywood; /* 배경색을 베이지색으로 설정 */
+                position: fixed; /* 고정 위치 설정 */
+                top: 10%; /* 화면의 상단에서 10% 위치에 고정 */
+                left: 10%; /* 화면의 왼쪽에서 10% 위치에 고정 */
+            } 
+        </style>
+    </head>
+    <body>
+        <div class="static">position:static</div> <!-- static 위치 요소 -->
+
+        <div class="relative">
+            position:relative <!-- relative 위치 요소 -->
+            <div class="absolute">position:absolute</div> <!-- absolute 위치 요소 -->
+        </div>
+        
+        <div class="fixed">position:fixed</div> <!-- fixed 위치 요소 -->
+    </body>
+</html>

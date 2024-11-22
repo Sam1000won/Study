@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <title>CSS TUTORIALS</title> <!-- 페이지 제목 -->
+        <link rel="icon" href="../img/chrome.png"> <!-- 페이지 아이콘 설정 -->
+        
+        <style>
+            input {
+                /* input 요소의 디스플레이 속성 설정 */
+                /* inline|block|none 중에서 block으로 설정하여 블록 요소로 만듦 */
+                display: block; 
+            }
+            div {                
+                width: 50px; /* div 요소의 너비 설정 */
+                height: 25px; /* div 요소의 높이 설정 */
+                border: 3px solid greenyellow; /* 테두리 설정 */
+                margin: 5px; /* 외부 여백 설정 */
+                float: left; /* 요소를 왼쪽으로 부동 처리 */
+            }
+            div.first { /* class가 'first'인 div 요소의 스타일 설정 */
+                border-color: red; /* 테두리 색상을 빨간색으로 설정 */
+                /* 나는 float:left 속성을 지우겠다.. */
+                clear: left; /* 왼쪽 요소를 지우고 새로운 라인에서 시작 */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- inline : 좌에서 우로 정렬 (라인 그리듯이) -->
+        <input type="text"/> <!-- 텍스트 입력 필드 -->
+        <input type="text"/> <!-- 텍스트 입력 필드 -->
+        <input type="text"/> <!-- 텍스트 입력 필드 -->
+        <input type="text"/> <!-- 텍스트 입력 필드 -->
+        
+        <!-- block : 위에서 아래로 정렬 (블록 쌓듯이) -->
+        <div></div> <!-- 빈 div 요소 -->
+        <div></div> <!-- 빈 div 요소 -->
+        <div></div> <!-- 빈 div 요소 -->
+
+        <div class="first"></div> <!-- class가 'first'인 빈 div 요소 -->
+        <div></div> <!-- 빈 div 요소 -->
+        <div></div> <!-- 빈 div 요소 -->
+
+        <div class="first"></div> <!-- class가 'first'인 빈 div 요소 -->
+        <div></div> <!-- 빈 div 요소 -->
+        <div></div> <!-- 빈 div 요소 -->
+    </body>
+</html>

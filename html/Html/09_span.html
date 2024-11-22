@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <title>SPAN</title> <!-- 페이지 제목 설정 -->
+        <!-- CSS 작성 -->
+        <style> 
+            table, th, td { 
+                border: 1px solid black; 
+                border-collapse: collapse;
+            }
+
+            th, td { 
+                padding: 5px;
+                text-align: center; 
+            }
+        </style>  
+    </head>
+    <body>
+        <table>
+            <caption>rowspan=2</caption> <!-- 테이블 제목 -->
+            <tr>
+                <td>TD</td> <!-- 데이터 셀 -->
+                <td>TD</td> <!-- 데이터 셀 -->
+                <td>TD</td> <!-- 데이터 셀 -->
+            </tr>
+            <tr>
+                <td rowspan="2">TD</td> <!-- 두 행에 걸쳐 있는 데이터 셀 -->
+                <td>TD</td> <!-- 데이터 셀 -->
+                <td>TD</td> <!-- 데이터 셀 -->
+            </tr>
+            <tr>                
+                <td>TD</td> <!-- 데이터 셀 -->
+                <td>TD</td> <!-- 데이터 셀 -->
+            </tr>
+        </table>
+
+        <hr/> <!-- 수평선 삽입 -->
+
+        <table>
+            <caption>colspan=2</caption> <!-- 테이블 제목 -->
+            <tr>
+                <td>TD</td> <!-- 데이터 셀 -->
+                <td>TD</td> <!-- 데이터 셀 -->
+                <td>TD</td> <!-- 데이터 셀 -->
+            </tr>
+            <tr>
+                <td colspan="2">TD</td> <!-- 두 열에 걸쳐 있는 데이터 셀 -->
+                <td>TD</td> <!-- 데이터 셀 -->                                
+            </tr>
+            <tr>           
+                <td>TD</td> <!-- 데이터 셀 -->     
+                <td>TD</td> <!-- 데이터 셀 -->
+                <td>TD</td> <!-- 데이터 셀 -->
+            </tr>
+        </table>
+    </body>
+</html>

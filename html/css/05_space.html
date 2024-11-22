@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <style>
+            /* 테이블, 헤더 셀, 데이터 셀의 스타일 설정 */
+            table, th, td {
+                border: 1px solid black; /* 테두리 설정 */
+                border-collapse: collapse; /* 테두리 중복 제거 */
+                /* 
+                    패딩 설정 예시:
+                    12:10px, 3:20px, 6:10px, 9:20px
+                    padding-top: 10px; /* 위쪽 패딩 */
+                    padding-right: 20px; /* 오른쪽 패딩 */
+                    padding-bottom: 10px; /* 아래쪽 패딩 */
+                    padding-left: 20px; /* 왼쪽 패딩 */ 
+
+                    padding: 10px 20px 10px 20px; /* 위쪽과 아래쪽 패딩은 10px, 오른쪽과 왼쪽은 20px */
+                */
+                /* 위아래, 좌우 패딩 설정 */
+                {padding : 10px 20px; /* 위아래 10px, 좌우 20px */
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>이름</th> <!-- 이름 열 제목 -->
+                    <th>나이</th> <!-- 나이 열 제목 -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>홍길동</td> <!-- 첫 번째 데이터 행: 이름 -->
+                    <td>70</td> <!-- 첫 번째 데이터 행: 나이 -->
+                </tr>
+                <tr>
+                    <td>김영수</td> <!-- 두 번째 데이터 행: 이름 -->
+                    <td>100</td> <!-- 두 번째 데이터 행: 나이 -->
+                </tr>
+                <tr>
+                    <td>홍정우</td> <!-- 세 번째 데이터 행: 이름 -->
+                    <td>40</td> <!-- 세 번째 데이터 행: 나이 -->
+                </tr>
+            </tbody>
+        </table>
+        <br/> <!-- 테이블 아래 여백 -->
+        
+    </body>
+</html>
